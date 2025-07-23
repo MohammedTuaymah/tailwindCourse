@@ -1,13 +1,590 @@
 <!doctype html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./style.css" rel="stylesheet">
+  <title>الصفحة الرئيسية</title>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline bg-yellow-500">
-    Hello world!
-  </h1>
+<body class="font-sans bg-gray-50">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <div class="flex items-center">
+            <img src="./img/logo-Photoroom.png" alt="logo" class="h-12 w-12">
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+          <div class="mr-10 flex items-baseline space-x-4 space-x-reverse">
+            <a href="#" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">الرئيسية</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">من نحن</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">الخدمات</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">المشاريع</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">تواصل معنا</a>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+            ابدأ الآن
+          </button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none" id="mobile-menu-btn">
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        <a href="#" class="text-gray-900 block px-3 py-2 rounded-md text-base font-medium">الرئيسية</a>
+        <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">من نحن</a>
+        <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">الخدمات</a>
+        <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">المشاريع</a>
+        <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">تواصل معنا</a>
+        <div class="pt-2">
+          <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+            ابدأ الآن
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+  <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('./img/Digital-Photoroom.webp');"></div>
+    
+    <!-- Dark Overlay for Better Text Readability -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/50"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+        نحن نبني المستقبل
+        <br class="hidden sm:block">
+        معاً
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl lg:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+        حلول رقمية مبتكرة تساعدك على تحقيق أهدافك وتطوير عملك بأحدث التقنيات العالمية
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <button class="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+          ابدأ رحلتك الآن
+          <svg class="w-5 h-5 mr-2 group-hover:transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </button>
+        
+        <button class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 flex items-center">
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          شاهد الفيديو
+        </button>
+      </div>
+
+      
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="animate-bounce">
+        <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">الكورسات المميزة</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">اكتشف أحدث الدورات التدريبية في مجال التقنية والذكاء الاصطناعي</p>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        
+        <!-- Product Card 1 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/6465341_68b8_2.jpg" 
+                 alt="AI Automation Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              جديد
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              الذكاء الاصطناعي: بناء تطبيقات LLM ووكلاء AI
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              أتمتة كل شيء: n8n، LLMs، OpenAI API، Deepseek، Ollama وRAG! وكلاء الأعمال والخاص AI
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              أرنولد أوبرليتر
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.7</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>3,570 تقييم</span>
+              <span>•</span>
+              <span>13.5 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">88 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">جميع المستويات</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$39.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/1565838_e54e_18.jpg" 
+                 alt="React Development Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              الأكثر مبيعاً
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              تطوير التطبيقات الحديثة باستخدام React
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              تعلم React من الصفر حتى الاحتراف مع أحدث المكتبات والأدوات
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              محمد أحمد
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.8</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>5,240 تقييم</span>
+              <span>•</span>
+              <span>18.5 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">124 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$49.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/1362070_b9a1_2.jpg" 
+                 alt="Python Programming Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              محدث
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              البرمجة بـ Python للمبتدئين والمحترفين
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              دورة شاملة في Python مع تطبيقات عملية في علم البيانات والذكاء الاصطناعي
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              سارة خالد
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.6</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>2,890 تقييم</span>
+              <span>•</span>
+              <span>22.0 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">156 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">مبتدئ</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$34.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/1748230_1d59_3.jpg" 
+                 alt="Web Design Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              مميز
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              تصميم المواقع الحديثة باستخدام Tailwind CSS
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              تعلم تصميم واجهات المستخدم العصرية والمتجاوبة باستخدام Tailwind CSS
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              عمر حسن
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.9</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>1,456 تقييم</span>
+              <span>•</span>
+              <span>16.5 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">98 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$44.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg" 
+                 alt="Mobile Development Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-indigo-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              متقدم
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              تطوير تطبيقات الهاتف باستخدام React Native
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              بناء تطبيقات الهاتف المحمول لنظامي iOS وAndroid باستخدام React Native
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              لينا محمود
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.5</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>987 تقييم</span>
+              <span>•</span>
+              <span>20.5 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">142 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متقدم</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$59.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/1463348_52a4_4.jpg" 
+                 alt="Data Science Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-teal-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              شائع
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              علم البيانات والتحليل باستخدام Python
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              تعلم تحليل البيانات والإحصائيات والتصور باستخدام Python وPandas
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              أحمد علي
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.7</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>4,123 تقييم</span>
+              <span>•</span>
+              <span>25.0 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">186 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$54.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 7 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/1561458_7f3a_11.jpg" 
+                 alt="Node.js Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-semibold">
+              عرض
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              تطوير الخلفية باستخدام Node.js وExpress
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              بناء تطبيقات الويب الخلفية باستخدام Node.js وExpress وMongoDB
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              يوسف إبراهيم
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.6</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>2,567 تقييم</span>
+              <span>•</span>
+              <span>19.5 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">134 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="text-xl font-bold text-gray-900">$29.99</div>
+                <div class="text-sm text-gray-500 line-through">$79.99</div>
+              </div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 8 -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+          <div class="relative">
+            <img src="https://img-c.udemycdn.com/course/240x135/2196488_8fc6_3.jpg" 
+                 alt="DevOps Course" 
+                 class="w-full h-36 object-cover">
+            <div class="absolute top-2 right-2 bg-gray-700 text-white px-2 py-1 rounded text-xs font-semibold">
+              حصري
+            </div>
+          </div>
+          
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
+              DevOps والنشر المستمر باستخدام Docker وKubernetes
+            </h3>
+            
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              تعلم DevOps وأتمتة النشر باستخدام Docker وKubernetes وCI/CD
+            </p>
+            
+            <div class="text-sm text-gray-500 mb-3">
+              فادي سعد
+            </div>
+            
+            <!-- Rating and Stats -->
+            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
+              <div class="flex items-center gap-1">
+                <span class="text-yellow-500 font-semibold">4.8</span>
+                <div class="flex text-yellow-400">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <span>•</span>
+              <span>1,789 تقييم</span>
+              <span>•</span>
+              <span>28.0 ساعة</span>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-4 text-xs">
+              <span class="bg-gray-100 px-2 py-1 rounded">178 محاضرة</span>
+              <span class="bg-gray-100 px-2 py-1 rounded">متقدم</span>
+            </div>
+            
+            <!-- Price and CTA -->
+            <div class="flex items-center justify-between">
+              <div class="text-xl font-bold text-gray-900">$69.99</div>
+              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                أضف للسلة
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View More Button -->
+      <div class="text-center mt-12">
+        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+          عرض المزيد من الكورسات
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/95');
+        navbar.classList.remove('bg-white/90');
+      } else {
+        navbar.classList.add('bg-white/90');
+        navbar.classList.remove('bg-white/95');
+      }
+    });
+  </script>
 </body>
 </html>
