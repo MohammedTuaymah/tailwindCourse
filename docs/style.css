@@ -323,8 +323,8 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-36 {
-    height: calc(var(--spacing) * 36);
+  .h-48 {
+    height: calc(var(--spacing) * 48);
   }
   .h-\[90vh\] {
     height: 90vh;
@@ -368,6 +368,9 @@
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -558,6 +561,12 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-center {
+    object-position: center;
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -912,9 +921,9 @@
       line-height: var(--tw-leading, var(--text-7xl--line-height));
     }
   }
-  .xl\:grid-cols-4 {
+  .xl\:grid-cols-3 {
     @media (width >= 80rem) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }
