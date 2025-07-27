@@ -71,6 +71,41 @@
       width: 100%;
       height: 100%;
     }
+    
+    /* Line clamp utility */
+    .line-clamp-2 {
+      display: -webkit-box;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    /* RTL Carousel styles */
+    .courses-carousel-scroll {
+      display: flex;
+      flex-direction: row;
+      cursor: grab;
+    }
+    
+    .courses-carousel-scroll:active {
+      cursor: grabbing;
+    }
+    
+    .course-card {
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .courses-carousel-container:focus {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -1140,6 +1175,265 @@
     </div>
   </section>
 
+  <!-- Courses Carousel Section -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">الكورسات الأكثر شعبية</h2>
+        <p class="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">تصفح أفضل الكورسات التدريبية في مختلف المجالات التقنية</p>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative">
+        <!-- Navigation Arrows - RTL -->
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="courses-prev">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="courses-next">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Courses Scroll Container -->
+        <div class="courses-carousel-container overflow-hidden" id="courses-carousel-container">
+          <div class="courses-carousel-scroll flex gap-4 md:gap-6 transition-transform duration-500 ease-out" id="courses-carousel-scroll">
+            
+            <!-- Course Card 1 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/1.jpg" alt="كورس الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  جديد
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  الذكاء الاصطناعي: بناء LLM ووكلاء AI
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.7</span>
+                  <span class="text-gray-500 text-xs">(3,570)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$39.99</span>
+                    <span class="text-sm text-gray-500 line-through">$89.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/2.jpg" alt="كورس React" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  الأكثر مبيعاً
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  تطوير التطبيقات الحديثة React
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.8</span>
+                  <span class="text-gray-500 text-xs">(5,240)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$49.99</span>
+                    <span class="text-sm text-gray-500 line-through">$99.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/3.jpg" alt="كورس Python" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  محدث
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  البرمجة بـ Python للمبتدئين والمحترفين
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.6</span>
+                  <span class="text-gray-500 text-xs">(2,890)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$34.99</span>
+                    <span class="text-sm text-gray-500 line-through">$79.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/4.jpg" alt="كورس Tailwind CSS" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  مميز
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  تصميم المواقع الحديثة Tailwind CSS
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.9</span>
+                  <span class="text-gray-500 text-xs">(1,456)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$44.99</span>
+                    <span class="text-sm text-gray-500 line-through">$94.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 5 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/5.jpg" alt="كورس React Native" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-indigo-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  متقدم
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  تطوير تطبيقات الهاتف React Native
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.5</span>
+                  <span class="text-gray-500 text-xs">(987)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$59.99</span>
+                    <span class="text-sm text-gray-500 line-through">$119.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 6 -->
+            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+              <div class="relative h-48 md:h-56 overflow-hidden">
+                <img src="./img/carts/6.jpg" alt="كورس علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute top-3 right-3 bg-teal-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  شائع
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors duration-200">
+                  علم البيانات والتحليل Python
+                </h3>
+                
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="flex text-yellow-400 text-sm">
+                    ★★★★★
+                  </div>
+                  <span class="text-yellow-500 font-semibold text-sm">4.7</span>
+                  <span class="text-gray-500 text-xs">(4,123)</span>
+                </div>
+                
+                <!-- Price and CTA -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl md:text-2xl font-bold text-gray-900">$54.99</span>
+                    <span class="text-sm text-gray-500 line-through">$109.99</span>
+                  </div>
+                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-md">
+                    اشترك الآن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="flex justify-center mt-6 md:mt-8 space-x-2">
+          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-600 transition-all duration-200" data-courses-slide="0" title="الصفحة 1"></button>
+          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200" data-courses-slide="1" title="الصفحة 2"></button>
+          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200" data-courses-slide="2" title="الصفحة 3"></button>
+        </div>
+        
+        
+      </div>
+    </div>
+  </section>
+
   <!-- Store Categories Section -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1876,6 +2170,431 @@
         // Recalculate on resize
         updateScroll(false);
       });
+      
+    })();
+
+    // Courses Carousel Functionality
+    (function() {
+      const container = document.getElementById('courses-carousel-container');
+      const scrollContainer = document.getElementById('courses-carousel-scroll');
+      const prevBtn = document.getElementById('courses-prev');
+      const nextBtn = document.getElementById('courses-next');
+      const indicators = document.querySelectorAll('[data-courses-slide]');
+      
+      let currentIndex = 0;
+      let isAutoScrolling = true;
+      let autoScrollInterval;
+      let isTransitioning = false;
+      
+      const cardWidth = window.innerWidth >= 768 ? 320 + 24 : 320 + 16; // w-80 + gap (responsive)
+      const originalCards = Array.from(scrollContainer.children);
+      const totalCards = originalCards.length;
+      const cardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+      
+      // Clone cards for infinite loop - RTL version
+      function setupInfiniteScroll() {
+        // For RTL, we want to start from the right side
+        // Clone first few cards and prepend to beginning (these will be on the right)
+        for (let i = Math.min(3, totalCards) - 1; i >= 0; i--) {
+          const clone = originalCards[i].cloneNode(true);
+          clone.classList.add('clone', 'clone-start');
+          scrollContainer.insertBefore(clone, scrollContainer.firstChild);
+        }
+        
+        // Clone last few cards and append to end (these will be on the left)
+        for (let i = totalCards - Math.min(3, totalCards); i < totalCards; i++) {
+          const clone = originalCards[i].cloneNode(true);
+          clone.classList.add('clone', 'clone-end');
+          scrollContainer.appendChild(clone);
+        }
+        
+        // Set initial position to show first real card
+        currentIndex = Math.min(3, totalCards);
+        updateScroll(false);
+      }
+      
+      // Initialize auto-scroll
+      function startAutoScroll() {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(() => {
+          if (!isTransitioning && isAutoScrolling) {
+            nextSlide();
+          }
+        }, 4000); // Change slide every 4 seconds
+      }
+      
+      // Update scroll position - RTL version
+      function updateScroll(animate = true) {
+        const translateX = currentIndex * cardWidth; // Positive for RTL
+        if (animate) {
+          scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+          scrollContainer.style.transition = 'none';
+        }
+        scrollContainer.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      // Handle infinite loop transition - RTL version
+      function handleInfiniteTransition() {
+        const cloneOffset = Math.min(3, totalCards);
+        
+        if (currentIndex < cloneOffset) {
+          // We're at the beginning (going too far right), jump to end
+          setTimeout(() => {
+            currentIndex = totalCards + cloneOffset - 1;
+            updateScroll(false);
+            isTransitioning = false;
+          }, 500);
+        } else if (currentIndex >= totalCards + cloneOffset) {
+          // We're at the end (going too far left), jump to beginning
+          setTimeout(() => {
+            currentIndex = cloneOffset;
+            updateScroll(false);
+            isTransitioning = false;
+          }, 500);
+        } else {
+          isTransitioning = false;
+        }
+      }
+      
+      // Update indicator states
+      function updateIndicators() {
+        const cloneOffset = Math.min(3, totalCards);
+        const realIndex = Math.max(0, (currentIndex - cloneOffset) % totalCards);
+        const indicatorIndex = Math.floor(realIndex / cardsPerView);
+        
+        indicators.forEach((indicator, index) => {
+          if (index === indicatorIndex) {
+            indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+            indicator.classList.add('bg-blue-600');
+          } else {
+            indicator.classList.remove('bg-blue-600');
+            indicator.classList.add('bg-gray-300', 'hover:bg-gray-400');
+          }
+        });
+      }
+      
+      // Navigation functions
+      function goToSlide(index) {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex = index;
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      function nextSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex--; // RTL: next means go left (decrease index)
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      function prevSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex++; // RTL: prev means go right (increase index)
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      // Event listeners for navigation buttons
+      prevBtn.addEventListener('click', () => {
+        isAutoScrolling = false;
+        prevSlide();
+        setTimeout(() => { isAutoScrolling = true; }, 3000);
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        isAutoScrolling = false;
+        nextSlide();
+        setTimeout(() => { isAutoScrolling = true; }, 3000);
+      });
+      
+      // Event listeners for indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          isAutoScrolling = false;
+          const cloneOffset = Math.min(3, totalCards);
+          goToSlide(cloneOffset + (index * cardsPerView));
+          setTimeout(() => { isAutoScrolling = true; }, 3000);
+        });
+      });
+      
+      // Enhanced Touch/Drag functionality for manual control
+      let isDragging = false;
+      let startX = 0;
+      let currentX = 0;
+      let dragOffset = 0;
+      let initialTransform = 0;
+      
+      // Mouse drag functionality
+      scrollContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX;
+        currentX = startX;
+        
+        // Get current transform value
+        const transform = scrollContainer.style.transform;
+        initialTransform = transform ? parseFloat(transform.replace('translateX(', '').replace('px)', '')) : 0;
+        
+        scrollContainer.style.cursor = 'grabbing';
+        scrollContainer.style.userSelect = 'none';
+        scrollContainer.style.transition = 'none';
+        
+        // Pause auto-scroll while dragging
+        isAutoScrolling = false;
+        
+        e.preventDefault();
+      });
+      
+      scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        currentX = e.pageX;
+        dragOffset = currentX - startX;
+        
+        // Apply the drag offset to the current position
+        const newTransform = initialTransform + dragOffset;
+        scrollContainer.style.transform = `translateX(${newTransform}px)`;
+      });
+      
+      scrollContainer.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        scrollContainer.style.cursor = 'grab';
+        scrollContainer.style.removeProperty('user-select');
+        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Determine if we should snap to next/previous slide
+        const threshold = cardWidth * 0.3; // 30% of card width
+        
+        if (Math.abs(dragOffset) > threshold) {
+          if (dragOffset > 0) {
+            // Dragged right - go to previous (RTL)
+            prevSlide();
+          } else {
+            // Dragged left - go to next (RTL)
+            nextSlide();
+          }
+        } else {
+          // Snap back to current position
+          updateScroll();
+        }
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+          startAutoScroll();
+        }, 3000);
+        
+        dragOffset = 0;
+      });
+      
+      scrollContainer.addEventListener('mouseleave', () => {
+        if (isDragging) {
+          // Treat as mouseup
+          scrollContainer.dispatchEvent(new Event('mouseup'));
+        }
+      });
+      
+      // Prevent text selection during drag
+      scrollContainer.addEventListener('selectstart', (e) => {
+        if (isDragging) e.preventDefault();
+      });
+      
+      // Enhanced Touch events for mobile manual control
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchCurrentX = 0;
+      let touchDragOffset = 0;
+      let touchInitialTransform = 0;
+      let isTouchDragging = false;
+      
+      scrollContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchCurrentX = touchStartX;
+        
+        // Get current transform value
+        const transform = scrollContainer.style.transform;
+        touchInitialTransform = transform ? parseFloat(transform.replace('translateX(', '').replace('px)', '')) : 0;
+        
+        scrollContainer.style.transition = 'none';
+        isAutoScrolling = false;
+        isTouchDragging = false;
+      });
+      
+      scrollContainer.addEventListener('touchmove', (e) => {
+        if (!touchStartX || !touchStartY) return;
+        
+        touchCurrentX = e.touches[0].clientX;
+        const touchCurrentY = e.touches[0].clientY;
+        
+        const deltaX = touchCurrentX - touchStartX;
+        const deltaY = touchCurrentY - touchStartY;
+        
+        // Check if this is a horizontal drag
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+          e.preventDefault(); // Prevent scrolling
+          isTouchDragging = true;
+          
+          touchDragOffset = deltaX;
+          
+          // Apply the drag offset to the current position
+          const newTransform = touchInitialTransform + touchDragOffset;
+          scrollContainer.style.transform = `translateX(${newTransform}px)`;
+        }
+      });
+      
+      scrollContainer.addEventListener('touchend', (e) => {
+        if (!isTouchDragging) {
+          // This was a tap, not a drag
+          touchStartX = 0;
+          touchStartY = 0;
+          setTimeout(() => {
+            isAutoScrolling = true;
+            startAutoScroll();
+          }, 3000);
+          return;
+        }
+        
+        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Determine if we should snap to next/previous slide
+        const threshold = cardWidth * 0.25; // 25% of card width for touch
+        
+        if (Math.abs(touchDragOffset) > threshold) {
+          if (touchDragOffset > 0) {
+            // Swiped right - go to previous (RTL)
+            prevSlide();
+          } else {
+            // Swiped left - go to next (RTL)
+            nextSlide();
+          }
+        } else {
+          // Snap back to current position
+          updateScroll();
+        }
+        
+        // Reset values
+        touchStartX = 0;
+        touchStartY = 0;
+        touchDragOffset = 0;
+        isTouchDragging = false;
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+          startAutoScroll();
+        }, 3000);
+      });
+      
+      // Keyboard navigation
+      container.addEventListener('keydown', (e) => {
+        if (!container.contains(document.activeElement)) return;
+        
+        switch(e.key) {
+          case 'ArrowRight':
+            e.preventDefault();
+            isAutoScrolling = false;
+            prevSlide(); // RTL: Right arrow = previous
+            setTimeout(() => { 
+              isAutoScrolling = true;
+              startAutoScroll();
+            }, 3000);
+            break;
+          case 'ArrowLeft':
+            e.preventDefault();
+            isAutoScrolling = false;
+            nextSlide(); // RTL: Left arrow = next
+            setTimeout(() => { 
+              isAutoScrolling = true;
+              startAutoScroll();
+            }, 3000);
+            break;
+          case ' ': // Spacebar
+          case 'Enter':
+            e.preventDefault();
+            isAutoScrolling = false;
+            nextSlide();
+            setTimeout(() => { 
+              isAutoScrolling = true;
+              startAutoScroll();
+            }, 3000);
+            break;
+        }
+      });
+      
+      // Mouse wheel navigation
+      container.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        
+        if (isTransitioning) return;
+        
+        isAutoScrolling = false;
+        
+        if (e.deltaY > 0) {
+          // Scroll down - go to next
+          nextSlide();
+        } else {
+          // Scroll up - go to previous
+          prevSlide();
+        }
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+          startAutoScroll();
+        }, 3000);
+      });
+      
+      // Pause auto-scroll on hover with focus for keyboard
+      container.addEventListener('mouseenter', () => {
+        isAutoScrolling = false;
+        container.setAttribute('tabindex', '0'); // Make focusable for keyboard navigation
+        container.focus();
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        if (!isDragging && !isTouchDragging) {
+          setTimeout(() => {
+            isAutoScrolling = true;
+            startAutoScroll();
+          }, 1000);
+        }
+      });
+      
+      // Responsive handling
+      window.addEventListener('resize', () => {
+        const newCardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+        if (newCardsPerView !== cardsPerView) {
+          location.reload(); // Simple solution for responsive changes
+        }
+      });
+      
+      // Initialize
+      setupInfiniteScroll();
+      updateIndicators();
+      startAutoScroll();
       
     })();
   </script>
