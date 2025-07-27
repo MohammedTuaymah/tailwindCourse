@@ -763,6 +763,267 @@
     </div>
   </section>
 
+  <!-- Store Categories Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">تصفح حسب الفئة</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">اكتشف الكورسات المناسبة لك من خلال تصفح الفئات المختلفة</p>
+      </div>
+
+      <!-- Categories Container -->
+      <div class="relative">
+        <!-- Navigation Arrows -->
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="next-category">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="prev-category">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Categories Scroll Container -->
+        <div class="categories-container overflow-hidden" id="categories-container">
+          <div class="categories-scroll flex gap-6 transition-transform duration-500 ease-out" id="categories-scroll">
+            
+            <!-- Category 1: Programming -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="programming">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/3.jpg" alt="البرمجة" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">البرمجة</h3>
+                <p class="text-gray-600 text-sm mb-4">تعلم لغات البرمجة المختلفة من المبتدئ إلى المتقدم</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">156 كورس</span>
+                  <div class="flex items-center text-blue-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Web Development -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="web-development">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/2.jpg" alt="تطوير الويب" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">تطوير الويب</h3>
+                <p class="text-gray-600 text-sm mb-4">بناء مواقع وتطبيقات الويب الحديثة والمتجاوبة</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">203 كورس</span>
+                  <div class="flex items-center text-green-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: AI & Machine Learning -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="ai-ml">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/1.jpg" alt="الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-200">الذكاء الاصطناعي</h3>
+                <p class="text-gray-600 text-sm mb-4">تعلم الذكاء الاصطناعي وتعلم الآلة وأحدث التقنيات</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">89 كورس</span>
+                  <div class="flex items-center text-purple-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4: Mobile Development -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="mobile-development">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/5.jpg" alt="تطوير الهاتف" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-200">تطوير الهاتف</h3>
+                <p class="text-gray-600 text-sm mb-4">بناء تطبيقات الهاتف المحمول لنظامي iOS وAndroid</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">134 كورس</span>
+                  <div class="flex items-center text-indigo-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 5: Data Science -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="data-science">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/6.jpg" alt="علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-200">علم البيانات</h3>
+                <p class="text-gray-600 text-sm mb-4">تحليل البيانات والإحصائيات والتصور البياني</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">167 كورس</span>
+                  <div class="flex items-center text-teal-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 6: DevOps -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="devops">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/8.jpg" alt="DevOps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-200">DevOps</h3>
+                <p class="text-gray-600 text-sm mb-4">أتمتة النشر والتطوير المستمر وإدارة البنية التحتية</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">78 كورس</span>
+                  <div class="flex items-center text-gray-700 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 7: Design -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="design">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/4.jpg" alt="التصميم" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-200">التصميم</h3>
+                <p class="text-gray-600 text-sm mb-4">تصميم واجهات المستخدم والرسومات والمواقع</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">145 كورس</span>
+                  <div class="flex items-center text-orange-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 8: Backend Development -->
+            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="backend">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./img/carts/7.jpg" alt="تطوير الخلفية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-200">تطوير الخلفية</h3>
+                <p class="text-gray-600 text-sm mb-4">بناء APIs وقواعد البيانات والخوادم</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">112 كورس</span>
+                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                    <span class="text-sm font-medium">تصفح</span>
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
 
 
 
@@ -803,6 +1064,410 @@
         navbar.classList.remove('bg-white/95');
       }
     });
+
+    // Categories Section Functionality
+    (function() {
+      const container = document.getElementById('categories-container');
+      const scrollContainer = document.getElementById('categories-scroll');
+      const prevBtn = document.getElementById('prev-category');
+      const nextBtn = document.getElementById('next-category');
+      const indicators = document.querySelectorAll('#category-indicators button');
+      
+      let currentIndex = 0;
+      let isAutoScrolling = true;
+      let autoScrollInterval;
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let isTransitioning = false;
+      
+      const cardWidth = 272; // 256px card + 24px gap
+      const totalCards = scrollContainer.children.length;
+      const maxIndex = totalCards - 1;
+      
+      // Clone cards for infinite loop
+      function setupInfiniteScroll() {
+        const cards = Array.from(scrollContainer.children);
+        
+        // Clone first few cards and append to end
+        for (let i = 0; i < 3; i++) {
+          const clone = cards[i].cloneNode(true);
+          clone.classList.add('clone');
+          scrollContainer.appendChild(clone);
+        }
+        
+        // Clone last few cards and prepend to beginning
+        for (let i = cards.length - 3; i < cards.length; i++) {
+          const clone = cards[i].cloneNode(true);
+          clone.classList.add('clone');
+          scrollContainer.insertBefore(clone, scrollContainer.firstChild);
+        }
+        
+        // Set initial position to show first real card
+        currentIndex = 3;
+        updateScroll(false);
+      }
+      
+      // Initialize auto-scroll
+      function startAutoScroll() {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(() => {
+          if (!isDragging && isAutoScrolling && !isTransitioning) {
+            prevSlide(); // Changed from nextSlide() to prevSlide() for RTL
+          }
+        }, 3000); // Change slide every 3 seconds
+      }
+      
+      // Update scroll position - REVERSED for RTL
+      function updateScroll(animate = true) {
+        const translateX = currentIndex * cardWidth; // Changed from negative to positive
+        if (animate) {
+          scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+          scrollContainer.style.transition = 'none';
+        }
+        scrollContainer.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      // Handle infinite loop transition - REVERSED for RTL
+      function handleInfiniteTransition() {
+        const realIndex = currentIndex - 3; // Adjust for prepended clones
+        
+        if (currentIndex >= totalCards + 3) {
+          // We're at the end, jump to beginning
+          setTimeout(() => {
+            currentIndex = 3;
+            updateScroll(false);
+            isTransitioning = false;
+          }, 500);
+        } else if (currentIndex < 3) {
+          // We're at the beginning, jump to end
+          setTimeout(() => {
+            currentIndex = totalCards + 2;
+            updateScroll(false);
+            isTransitioning = false;
+          }, 500);
+        } else {
+          isTransitioning = false;
+        }
+      }
+      
+      // Update indicator states
+      function updateIndicators() {
+        const realIndex = Math.max(0, currentIndex - 3) % totalCards;
+        indicators.forEach((indicator, index) => {
+          if (index === realIndex) {
+            indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+            indicator.classList.add('bg-blue-600');
+          } else {
+            indicator.classList.remove('bg-blue-600');
+            indicator.classList.add('bg-gray-300', 'hover:bg-gray-400');
+          }
+        });
+      }
+      
+      // Navigation functions - REVERSED for RTL
+      function goToSlide(index) {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex = index + 3; // Adjust for prepended clones
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      // REVERSED: prevSlide now moves to the right (next item)
+      function prevSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex++;
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      // REVERSED: nextSlide now moves to the left (previous item)
+      function nextSlide() {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        currentIndex--;
+        updateScroll();
+        updateIndicators();
+        
+        setTimeout(() => {
+          handleInfiniteTransition();
+        }, 500);
+      }
+      
+      // Event listeners for navigation buttons - REVERSED for RTL
+      prevBtn.addEventListener('click', () => {
+        isAutoScrolling = false;
+        prevSlide(); // This now moves to the right (next item)
+        setTimeout(() => { isAutoScrolling = true; }, 3000);
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        isAutoScrolling = false;
+        nextSlide(); // This now moves to the left (previous item)
+        setTimeout(() => { isAutoScrolling = true; }, 3000);
+      });
+      
+      // Event listeners for indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          isAutoScrolling = false;
+          goToSlide(index);
+          setTimeout(() => { isAutoScrolling = true; }, 3000);
+        });
+      });
+      
+      // Touch/Drag functionality - REVERSED for RTL
+      scrollContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+        scrollContainer.style.cursor = 'grabbing';
+        scrollContainer.style.userSelect = 'none';
+        scrollContainer.style.transition = 'none';
+      });
+      
+      scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (startX - x) * 2; // REVERSED: changed from (x - startX) to (startX - x)
+        scrollContainer.scrollLeft = scrollLeft + walk; // REVERSED: changed from - to +
+      });
+      
+      scrollContainer.addEventListener('mouseup', () => {
+        isDragging = false;
+        scrollContainer.style.cursor = 'grab';
+        scrollContainer.style.removeProperty('user-select');
+        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+      
+      scrollContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
+        scrollContainer.style.cursor = 'grab';
+        scrollContainer.style.removeProperty('user-select');
+        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+      
+      // Touch events for mobile - REVERSED for RTL
+      scrollContainer.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+        scrollContainer.style.transition = 'none';
+      });
+      
+      scrollContainer.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+        const walk = (startX - x) * 2; // REVERSED: changed from (x - startX) to (startX - x)
+        scrollContainer.scrollLeft = scrollLeft + walk; // REVERSED: changed from - to +
+      });
+      
+      scrollContainer.addEventListener('touchend', () => {
+        isDragging = false;
+        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+      
+      // Manual scrolling with mouse wheel
+      container.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        isAutoScrolling = false;
+        
+        if (e.deltaY > 0) {
+          // Scroll down - go to next item (right)
+          prevSlide();
+        } else {
+          // Scroll up - go to previous item (left)
+          nextSlide();
+        }
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+        }, 3000);
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!container.contains(document.activeElement)) return;
+        
+        isAutoScrolling = false;
+        
+        switch(e.key) {
+          case 'ArrowRight':
+            e.preventDefault();
+            prevSlide(); // Move right (next items)
+            break;
+          case 'ArrowLeft':
+            e.preventDefault();
+            nextSlide(); // Move left (previous items)
+            break;
+          case 'Home':
+            e.preventDefault();
+            goToSlide(0);
+            break;
+          case 'End':
+            e.preventDefault();
+            goToSlide(totalCards - 1);
+            break;
+        }
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+        }, 3000);
+      });
+      
+      // Manual scroll with scrollbar (if visible)
+      scrollContainer.addEventListener('scroll', (e) => {
+        if (isDragging) return;
+        
+        isAutoScrolling = false;
+        const scrollLeft = e.target.scrollLeft;
+        const cardIndex = Math.round(scrollLeft / cardWidth);
+        
+        if (cardIndex !== currentIndex) {
+          currentIndex = cardIndex;
+          updateIndicators();
+        }
+        
+        // Resume auto-scroll after 3 seconds
+        setTimeout(() => {
+          isAutoScrolling = true;
+        }, 3000);
+      });
+      
+      // Click and drag manual scrolling
+      let isManualScrolling = false;
+      let manualScrollStartX = 0;
+      let manualScrollStartY = 0;
+      
+      scrollContainer.addEventListener('mousedown', (e) => {
+        manualScrollStartX = e.clientX;
+        manualScrollStartY = e.clientY;
+        isManualScrolling = true;
+        isAutoScrolling = false;
+      });
+      
+      scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isManualScrolling) return;
+        
+        const deltaX = e.clientX - manualScrollStartX;
+        const deltaY = e.clientY - manualScrollStartY;
+        
+        // Only handle horizontal scrolling
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          e.preventDefault();
+          
+          if (deltaX > 50) {
+            // Dragged right - go to next item (right)
+            prevSlide();
+            isManualScrolling = false;
+          } else if (deltaX < -50) {
+            // Dragged left - go to previous item (left)
+            nextSlide();
+            isManualScrolling = false;
+          }
+        }
+      });
+      
+      scrollContainer.addEventListener('mouseup', () => {
+        isManualScrolling = false;
+        setTimeout(() => {
+          isAutoScrolling = true;
+        }, 3000);
+      });
+      
+      // Touch manual scrolling for mobile
+      let touchStartX = 0;
+      let touchStartY = 0;
+      
+      scrollContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isAutoScrolling = false;
+      });
+      
+      scrollContainer.addEventListener('touchmove', (e) => {
+        if (!touchStartX || !touchStartY) return;
+        
+        const touchEndX = e.touches[0].clientX;
+        const touchEndY = e.touches[0].clientY;
+        
+        const deltaX = touchStartX - touchEndX;
+        const deltaY = touchStartY - touchEndY;
+        
+        // Only handle horizontal swipes
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+          e.preventDefault();
+          
+          if (deltaX > 0) {
+            // Swiped left - go to next item (right)
+            prevSlide();
+          } else {
+            // Swiped right - go to previous item (left)
+            nextSlide();
+          }
+          
+          touchStartX = 0;
+          touchStartY = 0;
+        }
+      });
+      
+      scrollContainer.addEventListener('touchend', () => {
+        touchStartX = 0;
+        touchStartY = 0;
+        setTimeout(() => {
+          isAutoScrolling = true;
+        }, 3000);
+      });
+      
+      // Category card click handlers
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const category = card.dataset.category;
+          console.log(`Navigating to category: ${category}`);
+          // Add your navigation logic here
+          // For example: window.location.href = `/courses/${category}`;
+        });
+      });
+      
+      // Pause auto-scroll on hover
+      container.addEventListener('mouseenter', () => {
+        isAutoScrolling = false;
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        isAutoScrolling = true;
+      });
+      
+      // Initialize
+      setupInfiniteScroll();
+      updateIndicators();
+      startAutoScroll();
+      
+      // Responsive handling
+      window.addEventListener('resize', () => {
+        // Recalculate on resize
+        updateScroll(false);
+      });
+      
+    })();
   </script>
 </body>
 </html>
