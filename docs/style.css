@@ -1,88 +1,6 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
-
-/* Categories Swiper Styles */
-.categories-swiper {
-  padding: 0 50px;
-}
-
-.categories-swiper .swiper-button-prev,
-.categories-swiper .swiper-button-next {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
-  border-radius: 50%;
-  color: white;
-  margin-top: -25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
-}
-
-.categories-swiper .swiper-button-prev:hover,
-.categories-swiper .swiper-button-next:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4);
-}
-
-.categories-swiper .swiper-button-prev::after,
-.categories-swiper .swiper-button-next::after {
-  display: none;
-}
-
-.categories-swiper .swiper-button-prev {
-  left: 10px;
-}
-
-.categories-swiper .swiper-button-next {
-  right: 10px;
-}
-
-.categories-swiper .swiper-pagination {
-  bottom: -50px;
-}
-
-.categories-swiper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #d1d5db;
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-
-.categories-swiper .swiper-pagination-bullet-active {
-  background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
-  transform: scale(1.2);
-}
-
-.category-card {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .categories-swiper {
-    padding: 0 20px;
-  }
-  
-  .categories-swiper .swiper-button-prev,
-  .categories-swiper .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    margin-top: -20px;
-  }
-  
-  .categories-swiper .swiper-button-prev {
-    left: 5px;
-  }
-  
-  .categories-swiper .swiper-button-next {
-    right: 5px;
-  }
-}
 @layer theme {
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -144,11 +62,13 @@
     --color-sky-600: oklch(58.8% 0.158 241.966);
     --color-blue-50: oklch(97% 0.014 254.604);
     --color-blue-100: oklch(93.2% 0.032 255.585);
+    --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-100: oklch(93% 0.034 272.788);
@@ -865,6 +785,9 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-blue-200 {
+    border-color: var(--color-blue-200);
+  }
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
@@ -1421,6 +1344,9 @@
   .text-blue-600 {
     color: var(--color-blue-600);
   }
+  .text-blue-700 {
+    color: var(--color-blue-700);
+  }
   .text-gray-300 {
     color: var(--color-gray-300);
   }
@@ -1818,6 +1744,13 @@
       }
     }
   }
+  .hover\:border-blue-300 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-blue-300);
+      }
+    }
+  }
   .hover\:border-blue-500 {
     &:hover {
       @media (hover: hover) {
@@ -1849,6 +1782,13 @@
         @supports (color: color-mix(in lab, red, red)) {
           border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
         }
+      }
+    }
+  }
+  .hover\:bg-blue-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-50);
       }
     }
   }
@@ -1963,6 +1903,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-blue-600);
+      }
+    }
+  }
+  .hover\:text-blue-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-800);
       }
     }
   }

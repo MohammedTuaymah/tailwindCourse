@@ -1417,36 +1417,23 @@
     </div>
   </section>
 
-  <!-- Courses Carousel Section -->
+  <!-- Courses Carousel Section with Swiper -->
   <section class="py-12 md:py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Section Header -->
       <div class="text-center mb-8 md:mb-12">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">الكورسات الأكثر شعبية</h2>
-        <p class="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">تصفح أفضل الكورسات التدريبية في مختلف المجالات التقنية</p>
+        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded"></div>
+        <p class="mt-6 text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">تصفح أفضل الكورسات التدريبية في مختلف المجالات التقنية</p>
       </div>
 
-      <!-- Carousel Container -->
-      <div class="relative">
-        <!-- Navigation Arrows - RTL -->
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="courses-prev">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-        
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="courses-next">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <!-- Courses Scroll Container -->
-        <div class="courses-carousel-container overflow-hidden" id="courses-carousel-container">
-          <div class="courses-carousel-scroll flex gap-4 md:gap-6 transition-transform duration-500 ease-out" id="courses-carousel-scroll">
+      <!-- Courses Swiper -->
+      <div class="courses-swiper relative">
+        <div class="swiper-wrapper">
             
-            <!-- Course Card 1 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 1 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/1.jpg" alt="كورس الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1480,9 +1467,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Course Card 2 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 2 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/2.jpg" alt="كورس React" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1516,9 +1505,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Course Card 3 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 3 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/3.jpg" alt="كورس Python" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1552,9 +1543,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Course Card 4 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 4 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/4.jpg" alt="كورس Tailwind CSS" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1588,9 +1581,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Course Card 5 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 5 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/5.jpg" alt="كورس React Native" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-indigo-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1624,9 +1619,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Course Card 6 -->
-            <div class="course-card flex-shrink-0 w-80 sm:w-72 md:w-80 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
+          <!-- Course Slide 6 -->
+          <div class="swiper-slide">
+            <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group">
               <div class="relative h-48 md:h-56 overflow-hidden">
                 <img src="./img/carts/6.jpg" alt="كورس علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute top-3 right-3 bg-teal-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
@@ -1660,18 +1657,34 @@
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
 
-        <!-- Carousel Indicators -->
-        <div class="flex justify-center mt-6 md:mt-8 space-x-2">
-          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-600 transition-all duration-200" data-courses-slide="0" title="الصفحة 1"></button>
-          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200" data-courses-slide="1" title="الصفحة 2"></button>
-          <button class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-200" data-courses-slide="2" title="الصفحة 3"></button>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-prev courses-prev">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
         </div>
-        
-        
+        <div class="swiper-button-next courses-next">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="swiper-pagination courses-pagination"></div>
+      </div>
+      
+      <!-- View All Courses Button -->
+      <div class="mt-16 text-center">
+        <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-200 hover:border-blue-300 text-base font-bold rounded-lg text-blue-700 hover:text-blue-800 bg-white hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow">
+          عرض جميع الكورسات
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform translate-x-0.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -2223,255 +2236,75 @@
       }
     });
 
-    // Courses Carousel Functionality
-    (function() {
-      const container = document.getElementById('courses-carousel-container');
-      const scrollContainer = document.getElementById('courses-carousel-scroll');
-      const prevBtn = document.getElementById('courses-prev');
-      const nextBtn = document.getElementById('courses-next');
-      const indicators = document.querySelectorAll('[data-courses-slide]');
+    // Courses Swiper
+    const coursesSwiper = new Swiper('.courses-swiper', {
+      // Basic settings
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      speed: 800,
       
-      let currentIndex = 0;
-      let isAutoScrolling = true;
-      let autoScrollInterval;
-      let isTransitioning = false;
-      
-      const cardWidth = 344; // w-80 + gap
-      const originalCards = Array.from(scrollContainer.children);
-      const totalCards = originalCards.length;
-      
-      // Clone cards for infinite loop
-      function setupInfiniteScroll() {
-        for (let i = Math.min(3, totalCards) - 1; i >= 0; i--) {
-          const clone = originalCards[i].cloneNode(true);
-          clone.classList.add('clone');
-          scrollContainer.insertBefore(clone, scrollContainer.firstChild);
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 3.5,
+          spaceBetween: 24,
         }
-        
-        for (let i = totalCards - Math.min(3, totalCards); i < totalCards; i++) {
-          const clone = originalCards[i].cloneNode(true);
-          clone.classList.add('clone');
-          scrollContainer.appendChild(clone);
-        }
-        
-        currentIndex = Math.min(3, totalCards);
-        updateScroll(false);
-      }
+      },
       
-      // Initialize auto-scroll
-      function startAutoScroll() {
-        if (autoScrollInterval) clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(() => {
-          if (!isTransitioning && isAutoScrolling) {
-            nextSlide();
-          }
-        }, 4000); // Change slide every 4 seconds
-      }
+      // Navigation arrows
+      navigation: {
+        nextEl: '.courses-next',
+        prevEl: '.courses-prev',
+      },
       
-      // Update scroll position
-      function updateScroll(animate = true) {
-        const translateX = currentIndex * cardWidth;
-        scrollContainer.style.transition = animate ? 'transform 0.5s ease' : 'none';
-        scrollContainer.style.transform = `translateX(${translateX}px)`;
-      }
+      // Pagination dots
+      pagination: {
+        el: '.courses-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
       
-      // Handle infinite loop transition
-      function handleInfiniteTransition() {
-        const cloneOffset = Math.min(3, totalCards);
-        
-        if (currentIndex < cloneOffset) {
-          setTimeout(() => {
-            currentIndex = totalCards + cloneOffset - 1;
-            updateScroll(false);
-            isTransitioning = false;
-          }, 500);
-        } else if (currentIndex >= totalCards + cloneOffset) {
-          setTimeout(() => {
-            currentIndex = cloneOffset;
-            updateScroll(false);
-            isTransitioning = false;
-          }, 500);
-        } else {
-          isTransitioning = false;
+      // Effects
+      effect: 'slide',
+      grabCursor: true,
+      
+      // RTL support
+      rtl: true,
+      
+      // Events
+      on: {
+        init: function () {
+          // Course card click handlers
+          document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', () => {
+              console.log('Course clicked');
+              // Add your navigation logic here
+            });
+          });
         }
       }
-      
-      // Update indicator states
-      function updateIndicators() {
-        const cloneOffset = Math.min(3, totalCards);
-        const realIndex = Math.max(0, (currentIndex - cloneOffset) % totalCards);
-        
-        indicators.forEach((indicator, index) => {
-          if (index === Math.floor(realIndex / 2)) {
-            indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
-            indicator.classList.add('bg-blue-600');
-          } else {
-            indicator.classList.remove('bg-blue-600');
-            indicator.classList.add('bg-gray-300', 'hover:bg-gray-400');
-          }
-        });
-      }
-      
-      // Navigation functions
-      function goToSlide(index) {
-        if (isTransitioning) return;
-        
-        isTransitioning = true;
-        currentIndex = index;
-        updateScroll();
-        updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
-      }
-      
-      function nextSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentIndex--;
-        updateScroll();
-        updateIndicators();
-        setTimeout(() => { handleInfiniteTransition(); }, 500);
-      }
-      
-      function prevSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentIndex++;
-        updateScroll();
-        updateIndicators();
-        setTimeout(() => { handleInfiniteTransition(); }, 500);
-      }
-      
-      // Event listeners for navigation buttons
-      prevBtn.addEventListener('click', () => {
-        isAutoScrolling = false;
-        prevSlide();
-        setTimeout(() => { isAutoScrolling = true; }, 3000);
-      });
-      
-      nextBtn.addEventListener('click', () => {
-        isAutoScrolling = false;
-        nextSlide();
-        setTimeout(() => { isAutoScrolling = true; }, 3000);
-      });
-      
-      // Event listeners for indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          isAutoScrolling = false;
-          const cloneOffset = Math.min(3, totalCards);
-          goToSlide(cloneOffset + (index * 2));
-          setTimeout(() => { isAutoScrolling = true; }, 3000);
-        });
-      });
-      
-      // Simple drag functionality
-      let isDragging = false;
-      let startX = 0;
-      let dragOffset = 0;
-      
-      scrollContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX;
-        scrollContainer.style.cursor = 'grabbing';
-        isAutoScrolling = false;
-        e.preventDefault();
-      });
-      
-      scrollContainer.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        dragOffset = e.pageX - startX;
-      });
-      
-      scrollContainer.addEventListener('mouseup', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        scrollContainer.style.cursor = 'grab';
-        
-        if (Math.abs(dragOffset) > 50) {
-          if (dragOffset > 0) {
-            prevSlide();
-          } else {
-            nextSlide();
-          }
-        }
-        
-        setTimeout(() => { 
-          isAutoScrolling = true;
-          startAutoScroll();
-        }, 3000);
-        dragOffset = 0;
-      });
-      
-      // Touch events for mobile
-      let touchStartX = 0;
-      
-      scrollContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        isAutoScrolling = false;
-      });
-      
-      scrollContainer.addEventListener('touchend', (e) => {
-        const touchEndX = e.changedTouches[0].clientX;
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        }
-        
-        setTimeout(() => {
-          isAutoScrolling = true;
-          startAutoScroll();
-        }, 3000);
-      });
-      
-
-      
-      // Mouse wheel navigation
-      container.addEventListener('wheel', (e) => {
-        if (isTransitioning) return;
-        e.preventDefault();
-        isAutoScrolling = false;
-        
-        if (e.deltaY > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-        
-        setTimeout(() => {
-          isAutoScrolling = true;
-          startAutoScroll();
-        }, 3000);
-      });
-      
-      // Pause auto-scroll on hover
-      container.addEventListener('mouseenter', () => {
-        isAutoScrolling = false;
-      });
-      
-      container.addEventListener('mouseleave', () => {
-        if (!isDragging) {
-          isAutoScrolling = true;
-          startAutoScroll();
-        }
-      });
-      
-
-      
-      // Initialize
-      setupInfiniteScroll();
-      updateIndicators();
-      startAutoScroll();
-      
-    })();
+    });
   </script>
 
 
