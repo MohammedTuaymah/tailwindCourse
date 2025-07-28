@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./style.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <title>الصفحة الرئيسية</title>
   <style>
     /* Custom Carousel Styles */
@@ -1674,36 +1676,31 @@
     </div>
   </section>
 
-  <!-- Store Categories Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+
+
+
+
+
+  
+      <!-- Store Categories Section with Swiper -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Section Header -->
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">تصفح حسب الفئة</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">اكتشف الكورسات المناسبة لك من خلال تصفح الفئات المختلفة</p>
+        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
+        <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">اكتشف الكورسات المناسبة لك من خلال تصفح الفئات المختلفة</p>
       </div>
 
-      <!-- Categories Container -->
-      <div class="relative">
-        <!-- Navigation Arrows -->
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="next-category">
-          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-        
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 border border-gray-200" id="prev-category">
-          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <!-- Categories Scroll Container -->
-        <div class="categories-container overflow-hidden" id="categories-container">
-          <div class="categories-scroll flex gap-6 transition-transform duration-500 ease-out" id="categories-scroll">
-            
-            <!-- Category 1: Programming -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="programming">
+      <!-- Categories Swiper -->
+      <div class="categories-swiper relative">
+        <div class="swiper-wrapper">
+          
+          <!-- Category Slide 1: Programming -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="programming">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/3.jpg" alt="البرمجة" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1728,9 +1725,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 2: Web Development -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="web-development">
+          <!-- Category Slide 2: Web Development -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="web-development">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/2.jpg" alt="تطوير الويب" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1755,9 +1754,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 3: AI & Machine Learning -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="ai-ml">
+          <!-- Category Slide 3: AI & Machine Learning -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="ai-ml">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/1.jpg" alt="الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1782,9 +1783,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 4: Mobile Development -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="mobile-development">
+          <!-- Category Slide 4: Mobile Development -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="mobile-development">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/5.jpg" alt="تطوير الهاتف" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1809,9 +1812,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 5: Data Science -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="data-science">
+          <!-- Category Slide 5: Data Science -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="data-science">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/6.jpg" alt="علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1836,9 +1841,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 6: DevOps -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="devops">
+          <!-- Category Slide 6: DevOps -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="devops">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/8.jpg" alt="DevOps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1864,9 +1871,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 7: Design -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="design">
+          <!-- Category Slide 7: Design -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="design">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/4.jpg" alt="التصميم" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1891,9 +1900,11 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Category 8: Backend Development -->
-            <div class="category-card flex-shrink-0 w-64 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="backend">
+          <!-- Category Slide 8: Backend Development -->
+          <div class="swiper-slide">
+            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="backend">
               <div class="relative h-48 overflow-hidden">
                 <img src="./img/carts/7.jpg" alt="تطوير الخلفية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1918,11 +1929,34 @@
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
 
-        
+        <!-- Navigation arrows -->
+        <div class="swiper-button-prev categories-prev">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="swiper-button-next categories-next">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="swiper-pagination categories-pagination"></div>
+      </div>
+      
+      <!-- View All Categories Button -->
+      <div class="mt-16 text-center">
+        <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-200 hover:border-purple-300 text-base font-bold rounded-lg text-purple-700 hover:text-purple-800 bg-white hover:bg-purple-50 transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow">
+          عرض جميع الفئات
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform translate-x-0.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -2097,6 +2131,8 @@
 
   <!-- JavaScript for Mobile Menu and Carousel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     document.getElementById('mobile-menu-btn').addEventListener('click', function() {
       const mobileMenu = document.getElementById('mobile-menu');
@@ -2115,335 +2151,77 @@
       }
     });
 
-    // Categories Section Functionality
-    (function() {
-      const container = document.getElementById('categories-container');
-      const scrollContainer = document.getElementById('categories-scroll');
-      const prevBtn = document.getElementById('prev-category');
-      const nextBtn = document.getElementById('next-category');
-      const indicators = document.querySelectorAll('#category-indicators button');
+    // Categories Swiper
+    const categoriesSwiper = new Swiper('.categories-swiper', {
+      // Basic settings
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      speed: 700,
       
-      let currentIndex = 0;
-      let isAutoScrolling = true;
-      let autoScrollInterval;
-      let isDragging = false;
-      let startX = 0;
-      let scrollLeft = 0;
-      let isTransitioning = false;
-      
-      const cardWidth = 272;
-      const totalCards = scrollContainer.children.length;
-      
-      // Clone cards for infinite loop
-      function setupInfiniteScroll() {
-        const cards = Array.from(scrollContainer.children);
-        
-        // Clone first few cards and append to end
-        for (let i = 0; i < 3; i++) {
-          const clone = cards[i].cloneNode(true);
-          clone.classList.add('clone');
-          scrollContainer.appendChild(clone);
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 24,
         }
-        
-        // Clone last few cards and prepend to beginning
-        for (let i = cards.length - 3; i < cards.length; i++) {
-          const clone = cards[i].cloneNode(true);
-          clone.classList.add('clone');
-          scrollContainer.insertBefore(clone, scrollContainer.firstChild);
-        }
-        
-        // Set initial position to show first real card
-        currentIndex = 3;
-        updateScroll(false);
-      }
+      },
       
-      // Initialize auto-scroll
-      function startAutoScroll() {
-        if (autoScrollInterval) clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(() => {
-          if (!isDragging && isAutoScrolling && !isTransitioning) {
-            prevSlide(); // Changed from nextSlide() to prevSlide() for RTL
-          }
-        }, 3000); // Change slide every 3 seconds
-      }
+      // Navigation arrows
+      navigation: {
+        nextEl: '.categories-next',
+        prevEl: '.categories-prev',
+      },
       
-      // Update scroll position - REVERSED for RTL
-      function updateScroll(animate = true) {
-        const translateX = currentIndex * cardWidth; // Changed from negative to positive
-        if (animate) {
-          scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        } else {
-          scrollContainer.style.transition = 'none';
-        }
-        scrollContainer.style.transform = `translateX(${translateX}px)`;
-      }
+      // Pagination dots
+      pagination: {
+        el: '.categories-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
       
-      // Handle infinite loop transition - REVERSED for RTL
-      function handleInfiniteTransition() {
-        const realIndex = currentIndex - 3; // Adjust for prepended clones
-        
-        if (currentIndex >= totalCards + 3) {
-          // We're at the end, jump to beginning
-          setTimeout(() => {
-            currentIndex = 3;
-            updateScroll(false);
-            isTransitioning = false;
-          }, 500);
-        } else if (currentIndex < 3) {
-          // We're at the beginning, jump to end
-          setTimeout(() => {
-            currentIndex = totalCards + 2;
-            updateScroll(false);
-            isTransitioning = false;
-          }, 500);
-        } else {
-          isTransitioning = false;
+      // Effects
+      effect: 'slide',
+      grabCursor: true,
+      
+      // RTL support
+      rtl: true,
+      
+      // Events
+      on: {
+        init: function () {
+          // Category card click handlers
+          document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+              const category = card.dataset.category;
+              console.log(`Navigating to category: ${category}`);
+              // Add your navigation logic here
+              // window.location.href = `/courses/${category}`;
+            });
+          });
         }
       }
-      
-      // Update indicator states
-      function updateIndicators() {
-        const realIndex = Math.max(0, currentIndex - 3) % totalCards;
-        indicators.forEach((indicator, index) => {
-          if (index === realIndex) {
-            indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
-            indicator.classList.add('bg-blue-600');
-          } else {
-            indicator.classList.remove('bg-blue-600');
-            indicator.classList.add('bg-gray-300', 'hover:bg-gray-400');
-          }
-        });
-      }
-      
-      // Navigation functions - REVERSED for RTL
-      function goToSlide(index) {
-        if (isTransitioning) return;
-        
-        isTransitioning = true;
-        currentIndex = index + 3; // Adjust for prepended clones
-        updateScroll();
-        updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
-      }
-      
-      // REVERSED: prevSlide now moves to the right (next item)
-      function prevSlide() {
-        if (isTransitioning) return;
-        
-        isTransitioning = true;
-        currentIndex++;
-        updateScroll();
-        updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
-      }
-      
-      // REVERSED: nextSlide now moves to the left (previous item)
-      function nextSlide() {
-        if (isTransitioning) return;
-        
-        isTransitioning = true;
-        currentIndex--;
-        updateScroll();
-        updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
-      }
-      
-      // Event listeners for navigation buttons - REVERSED for RTL
-      prevBtn.addEventListener('click', () => {
-        isAutoScrolling = false;
-        prevSlide(); // This now moves to the right (next item)
-        setTimeout(() => { isAutoScrolling = true; }, 3000);
-      });
-      
-      nextBtn.addEventListener('click', () => {
-        isAutoScrolling = false;
-        nextSlide(); // This now moves to the left (previous item)
-        setTimeout(() => { isAutoScrolling = true; }, 3000);
-      });
-      
-      // Event listeners for indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          isAutoScrolling = false;
-          goToSlide(index);
-          setTimeout(() => { isAutoScrolling = true; }, 3000);
-        });
-      });
-      
-      // Touch/Drag functionality - REVERSED for RTL
-      scrollContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - scrollContainer.offsetLeft;
-        scrollLeft = scrollContainer.scrollLeft;
-        scrollContainer.style.cursor = 'grabbing';
-        scrollContainer.style.userSelect = 'none';
-        scrollContainer.style.transition = 'none';
-      });
-      
-      scrollContainer.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - scrollContainer.offsetLeft;
-        const walk = (startX - x) * 2; // REVERSED: changed from (x - startX) to (startX - x)
-        scrollContainer.scrollLeft = scrollLeft + walk; // REVERSED: changed from - to +
-      });
-      
-      scrollContainer.addEventListener('mouseup', () => {
-        isDragging = false;
-        scrollContainer.style.cursor = 'grab';
-        scrollContainer.style.removeProperty('user-select');
-        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-      });
-      
-      scrollContainer.addEventListener('mouseleave', () => {
-        isDragging = false;
-        scrollContainer.style.cursor = 'grab';
-        scrollContainer.style.removeProperty('user-select');
-        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-      });
-      
-      // Touch events for mobile - REVERSED for RTL
-      scrollContainer.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        startX = e.touches[0].pageX - scrollContainer.offsetLeft;
-        scrollLeft = scrollContainer.scrollLeft;
-        scrollContainer.style.transition = 'none';
-      });
-      
-      scrollContainer.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
-        const walk = (startX - x) * 2; // REVERSED: changed from (x - startX) to (startX - x)
-        scrollContainer.scrollLeft = scrollLeft + walk; // REVERSED: changed from - to +
-      });
-      
-      scrollContainer.addEventListener('touchend', () => {
-        isDragging = false;
-        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-      });
-      
-      // Mouse wheel navigation
-      container.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        isAutoScrolling = false;
-        
-        if (e.deltaY > 0) {
-          prevSlide();
-        } else {
-          nextSlide();
-        }
-        
-        setTimeout(() => { isAutoScrolling = true; }, 3000);
-      });
-      
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (!container.contains(document.activeElement)) return;
-        
-        isAutoScrolling = false;
-        
-        switch(e.key) {
-          case 'ArrowRight':
-            e.preventDefault();
-            prevSlide(); // Move right (next items)
-            break;
-          case 'ArrowLeft':
-            e.preventDefault();
-            nextSlide(); // Move left (previous items)
-            break;
-          case 'Home':
-            e.preventDefault();
-            goToSlide(0);
-            break;
-          case 'End':
-            e.preventDefault();
-            goToSlide(totalCards - 1);
-            break;
-        }
-        
-        // Resume auto-scroll after 3 seconds
-        setTimeout(() => {
-          isAutoScrolling = true;
-        }, 3000);
-      });
-      
-
-      
-
-      
-      // Category card click handlers
-      document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const category = card.dataset.category;
-          console.log(`Navigating to category: ${category}`);
-          // Add your navigation logic here
-          // For example: window.location.href = `/courses/${category}`;
-        });
-      });
-      
-      // Pause auto-scroll on hover
-      container.addEventListener('mouseenter', () => {
-        isAutoScrolling = false;
-      });
-      
-      container.addEventListener('mouseleave', () => {
-        isAutoScrolling = true;
-      });
-      
-          // Initialize
-    setupInfiniteScroll();
-    updateIndicators();
-    startAutoScroll();
-    
-    // Carousel Auto-play functionality
-    const carousel = document.getElementById('controls-carousel');
-    if (carousel) {
-      let autoPlayInterval;
-      
-      function startCarouselAutoPlay() {
-        autoPlayInterval = setInterval(() => {
-          const nextButton = carousel.querySelector('[data-carousel-next]');
-          if (nextButton) {
-            nextButton.click();
-          }
-        }, 5000); // Change slide every 5 seconds
-      }
-      
-      function stopCarouselAutoPlay() {
-        if (autoPlayInterval) {
-          clearInterval(autoPlayInterval);
-        }
-      }
-      
-      // Start auto-play
-      startCarouselAutoPlay();
-      
-      // Pause auto-play on hover
-      carousel.addEventListener('mouseenter', stopCarouselAutoPlay);
-      carousel.addEventListener('mouseleave', startCarouselAutoPlay);
-      
-      // Pause auto-play on focus
-      carousel.addEventListener('focusin', stopCarouselAutoPlay);
-      carousel.addEventListener('focusout', startCarouselAutoPlay);
-    }
-      
-      // Responsive handling
-      window.addEventListener('resize', () => {
-        // Recalculate on resize
-        updateScroll(false);
-      });
-      
-    })();
+    });
 
     // Courses Carousel Functionality
     (function() {
