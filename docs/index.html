@@ -2131,9 +2131,8 @@
       let scrollLeft = 0;
       let isTransitioning = false;
       
-      const cardWidth = 272; // 256px card + 24px gap
+      const cardWidth = 272;
       const totalCards = scrollContainer.children.length;
-      const maxIndex = totalCards - 1;
       
       // Clone cards for infinite loop
       function setupInfiniteScroll() {
@@ -2333,23 +2332,18 @@
         scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
       });
       
-      // Manual scrolling with mouse wheel
+      // Mouse wheel navigation
       container.addEventListener('wheel', (e) => {
         e.preventDefault();
         isAutoScrolling = false;
         
         if (e.deltaY > 0) {
-          // Scroll down - go to next item (right)
           prevSlide();
         } else {
-          // Scroll up - go to previous item (left)
           nextSlide();
         }
         
-        // Resume auto-scroll after 3 seconds
-        setTimeout(() => {
-          isAutoScrolling = true;
-        }, 3000);
+        setTimeout(() => { isAutoScrolling = true; }, 3000);
       });
       
       // Keyboard navigation
@@ -2383,109 +2377,9 @@
         }, 3000);
       });
       
-      // Manual scroll with scrollbar (if visible)
-      scrollContainer.addEventListener('scroll', (e) => {
-        if (isDragging) return;
-        
-        isAutoScrolling = false;
-        const scrollLeft = e.target.scrollLeft;
-        const cardIndex = Math.round(scrollLeft / cardWidth);
-        
-        if (cardIndex !== currentIndex) {
-          currentIndex = cardIndex;
-          updateIndicators();
-        }
-        
-        // Resume auto-scroll after 3 seconds
-        setTimeout(() => {
-          isAutoScrolling = true;
-        }, 3000);
-      });
+
       
-      // Click and drag manual scrolling
-      let isManualScrolling = false;
-      let manualScrollStartX = 0;
-      let manualScrollStartY = 0;
-      
-      scrollContainer.addEventListener('mousedown', (e) => {
-        manualScrollStartX = e.clientX;
-        manualScrollStartY = e.clientY;
-        isManualScrolling = true;
-        isAutoScrolling = false;
-      });
-      
-      scrollContainer.addEventListener('mousemove', (e) => {
-        if (!isManualScrolling) return;
-        
-        const deltaX = e.clientX - manualScrollStartX;
-        const deltaY = e.clientY - manualScrollStartY;
-        
-        // Only handle horizontal scrolling
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          e.preventDefault();
-          
-          if (deltaX > 50) {
-            // Dragged right - go to next item (right)
-            prevSlide();
-            isManualScrolling = false;
-          } else if (deltaX < -50) {
-            // Dragged left - go to previous item (left)
-            nextSlide();
-            isManualScrolling = false;
-          }
-        }
-      });
-      
-      scrollContainer.addEventListener('mouseup', () => {
-        isManualScrolling = false;
-        setTimeout(() => {
-          isAutoScrolling = true;
-        }, 3000);
-      });
-      
-      // Touch manual scrolling for mobile
-      let touchStartX = 0;
-      let touchStartY = 0;
-      
-      scrollContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        isAutoScrolling = false;
-      });
-      
-      scrollContainer.addEventListener('touchmove', (e) => {
-        if (!touchStartX || !touchStartY) return;
-        
-        const touchEndX = e.touches[0].clientX;
-        const touchEndY = e.touches[0].clientY;
-        
-        const deltaX = touchStartX - touchEndX;
-        const deltaY = touchStartY - touchEndY;
-        
-        // Only handle horizontal swipes
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-          e.preventDefault();
-          
-          if (deltaX > 0) {
-            // Swiped left - go to next item (right)
-            prevSlide();
-          } else {
-            // Swiped right - go to previous item (left)
-            nextSlide();
-          }
-          
-          touchStartX = 0;
-          touchStartY = 0;
-        }
-      });
-      
-      scrollContainer.addEventListener('touchend', () => {
-        touchStartX = 0;
-        touchStartY = 0;
-        setTimeout(() => {
-          isAutoScrolling = true;
-        }, 3000);
-      });
+
       
       // Category card click handlers
       document.querySelectorAll('.category-card').forEach(card => {
@@ -2564,29 +2458,24 @@
       let autoScrollInterval;
       let isTransitioning = false;
       
-      const cardWidth = window.innerWidth >= 768 ? 320 + 24 : 320 + 16; // w-80 + gap (responsive)
+      const cardWidth = 344; // w-80 + gap
       const originalCards = Array.from(scrollContainer.children);
       const totalCards = originalCards.length;
-      const cardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
       
-      // Clone cards for infinite loop - RTL version
+      // Clone cards for infinite loop
       function setupInfiniteScroll() {
-        // For RTL, we want to start from the right side
-        // Clone first few cards and prepend to beginning (these will be on the right)
         for (let i = Math.min(3, totalCards) - 1; i >= 0; i--) {
           const clone = originalCards[i].cloneNode(true);
-          clone.classList.add('clone', 'clone-start');
+          clone.classList.add('clone');
           scrollContainer.insertBefore(clone, scrollContainer.firstChild);
         }
         
-        // Clone last few cards and append to end (these will be on the left)
         for (let i = totalCards - Math.min(3, totalCards); i < totalCards; i++) {
           const clone = originalCards[i].cloneNode(true);
-          clone.classList.add('clone', 'clone-end');
+          clone.classList.add('clone');
           scrollContainer.appendChild(clone);
         }
         
-        // Set initial position to show first real card
         currentIndex = Math.min(3, totalCards);
         updateScroll(false);
       }
@@ -2601,30 +2490,24 @@
         }, 4000); // Change slide every 4 seconds
       }
       
-      // Update scroll position - RTL version
+      // Update scroll position
       function updateScroll(animate = true) {
-        const translateX = currentIndex * cardWidth; // Positive for RTL
-        if (animate) {
-          scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        } else {
-          scrollContainer.style.transition = 'none';
-        }
+        const translateX = currentIndex * cardWidth;
+        scrollContainer.style.transition = animate ? 'transform 0.5s ease' : 'none';
         scrollContainer.style.transform = `translateX(${translateX}px)`;
       }
       
-      // Handle infinite loop transition - RTL version
+      // Handle infinite loop transition
       function handleInfiniteTransition() {
         const cloneOffset = Math.min(3, totalCards);
         
         if (currentIndex < cloneOffset) {
-          // We're at the beginning (going too far right), jump to end
           setTimeout(() => {
             currentIndex = totalCards + cloneOffset - 1;
             updateScroll(false);
             isTransitioning = false;
           }, 500);
         } else if (currentIndex >= totalCards + cloneOffset) {
-          // We're at the end (going too far left), jump to beginning
           setTimeout(() => {
             currentIndex = cloneOffset;
             updateScroll(false);
@@ -2639,10 +2522,9 @@
       function updateIndicators() {
         const cloneOffset = Math.min(3, totalCards);
         const realIndex = Math.max(0, (currentIndex - cloneOffset) % totalCards);
-        const indicatorIndex = Math.floor(realIndex / cardsPerView);
         
         indicators.forEach((indicator, index) => {
-          if (index === indicatorIndex) {
+          if (index === Math.floor(realIndex / 2)) {
             indicator.classList.remove('bg-gray-300', 'hover:bg-gray-400');
             indicator.classList.add('bg-blue-600');
           } else {
@@ -2668,28 +2550,20 @@
       
       function nextSlide() {
         if (isTransitioning) return;
-        
         isTransitioning = true;
-        currentIndex--; // RTL: next means go left (decrease index)
+        currentIndex--;
         updateScroll();
         updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
+        setTimeout(() => { handleInfiniteTransition(); }, 500);
       }
       
       function prevSlide() {
         if (isTransitioning) return;
-        
         isTransitioning = true;
-        currentIndex++; // RTL: prev means go right (increase index)
+        currentIndex++;
         updateScroll();
         updateIndicators();
-        
-        setTimeout(() => {
-          handleInfiniteTransition();
-        }, 500);
+        setTimeout(() => { handleInfiniteTransition(); }, 500);
       }
       
       // Event listeners for navigation buttons
@@ -2710,264 +2584,109 @@
         indicator.addEventListener('click', () => {
           isAutoScrolling = false;
           const cloneOffset = Math.min(3, totalCards);
-          goToSlide(cloneOffset + (index * cardsPerView));
+          goToSlide(cloneOffset + (index * 2));
           setTimeout(() => { isAutoScrolling = true; }, 3000);
         });
       });
       
-      // Enhanced Touch/Drag functionality for manual control
+      // Simple drag functionality
       let isDragging = false;
       let startX = 0;
-      let currentX = 0;
       let dragOffset = 0;
-      let initialTransform = 0;
       
-      // Mouse drag functionality
       scrollContainer.addEventListener('mousedown', (e) => {
         isDragging = true;
         startX = e.pageX;
-        currentX = startX;
-        
-        // Get current transform value
-        const transform = scrollContainer.style.transform;
-        initialTransform = transform ? parseFloat(transform.replace('translateX(', '').replace('px)', '')) : 0;
-        
         scrollContainer.style.cursor = 'grabbing';
-        scrollContainer.style.userSelect = 'none';
-        scrollContainer.style.transition = 'none';
-        
-        // Pause auto-scroll while dragging
         isAutoScrolling = false;
-        
         e.preventDefault();
       });
       
       scrollContainer.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
         e.preventDefault();
-        
-        currentX = e.pageX;
-        dragOffset = currentX - startX;
-        
-        // Apply the drag offset to the current position
-        const newTransform = initialTransform + dragOffset;
-        scrollContainer.style.transform = `translateX(${newTransform}px)`;
+        dragOffset = e.pageX - startX;
       });
       
       scrollContainer.addEventListener('mouseup', () => {
         if (!isDragging) return;
-        
         isDragging = false;
         scrollContainer.style.cursor = 'grab';
-        scrollContainer.style.removeProperty('user-select');
-        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         
-        // Determine if we should snap to next/previous slide
-        const threshold = cardWidth * 0.3; // 30% of card width
-        
-        if (Math.abs(dragOffset) > threshold) {
+        if (Math.abs(dragOffset) > 50) {
           if (dragOffset > 0) {
-            // Dragged right - go to previous (RTL)
             prevSlide();
           } else {
-            // Dragged left - go to next (RTL)
             nextSlide();
           }
-        } else {
-          // Snap back to current position
-          updateScroll();
         }
         
-        // Resume auto-scroll after 3 seconds
-        setTimeout(() => {
+        setTimeout(() => { 
           isAutoScrolling = true;
           startAutoScroll();
         }, 3000);
-        
         dragOffset = 0;
       });
       
-      scrollContainer.addEventListener('mouseleave', () => {
-        if (isDragging) {
-          // Treat as mouseup
-          scrollContainer.dispatchEvent(new Event('mouseup'));
-        }
-      });
-      
-      // Prevent text selection during drag
-      scrollContainer.addEventListener('selectstart', (e) => {
-        if (isDragging) e.preventDefault();
-      });
-      
-      // Enhanced Touch events for mobile manual control
+      // Touch events for mobile
       let touchStartX = 0;
-      let touchStartY = 0;
-      let touchCurrentX = 0;
-      let touchDragOffset = 0;
-      let touchInitialTransform = 0;
-      let isTouchDragging = false;
       
       scrollContainer.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        touchCurrentX = touchStartX;
-        
-        // Get current transform value
-        const transform = scrollContainer.style.transform;
-        touchInitialTransform = transform ? parseFloat(transform.replace('translateX(', '').replace('px)', '')) : 0;
-        
-        scrollContainer.style.transition = 'none';
         isAutoScrolling = false;
-        isTouchDragging = false;
-      });
-      
-      scrollContainer.addEventListener('touchmove', (e) => {
-        if (!touchStartX || !touchStartY) return;
-        
-        touchCurrentX = e.touches[0].clientX;
-        const touchCurrentY = e.touches[0].clientY;
-        
-        const deltaX = touchCurrentX - touchStartX;
-        const deltaY = touchCurrentY - touchStartY;
-        
-        // Check if this is a horizontal drag
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-          e.preventDefault(); // Prevent scrolling
-          isTouchDragging = true;
-          
-          touchDragOffset = deltaX;
-          
-          // Apply the drag offset to the current position
-          const newTransform = touchInitialTransform + touchDragOffset;
-          scrollContainer.style.transform = `translateX(${newTransform}px)`;
-        }
       });
       
       scrollContainer.addEventListener('touchend', (e) => {
-        if (!isTouchDragging) {
-          // This was a tap, not a drag
-          touchStartX = 0;
-          touchStartY = 0;
-          setTimeout(() => {
-            isAutoScrolling = true;
-            startAutoScroll();
-          }, 3000);
-          return;
-        }
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
         
-        scrollContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        
-        // Determine if we should snap to next/previous slide
-        const threshold = cardWidth * 0.25; // 25% of card width for touch
-        
-        if (Math.abs(touchDragOffset) > threshold) {
-          if (touchDragOffset > 0) {
-            // Swiped right - go to previous (RTL)
-            prevSlide();
-          } else {
-            // Swiped left - go to next (RTL)
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
             nextSlide();
+          } else {
+            prevSlide();
           }
-        } else {
-          // Snap back to current position
-          updateScroll();
         }
         
-        // Reset values
-        touchStartX = 0;
-        touchStartY = 0;
-        touchDragOffset = 0;
-        isTouchDragging = false;
-        
-        // Resume auto-scroll after 3 seconds
         setTimeout(() => {
           isAutoScrolling = true;
           startAutoScroll();
         }, 3000);
       });
       
-      // Keyboard navigation
-      container.addEventListener('keydown', (e) => {
-        if (!container.contains(document.activeElement)) return;
-        
-        switch(e.key) {
-          case 'ArrowRight':
-            e.preventDefault();
-            isAutoScrolling = false;
-            prevSlide(); // RTL: Right arrow = previous
-            setTimeout(() => { 
-              isAutoScrolling = true;
-              startAutoScroll();
-            }, 3000);
-            break;
-          case 'ArrowLeft':
-            e.preventDefault();
-            isAutoScrolling = false;
-            nextSlide(); // RTL: Left arrow = next
-            setTimeout(() => { 
-              isAutoScrolling = true;
-              startAutoScroll();
-            }, 3000);
-            break;
-          case ' ': // Spacebar
-          case 'Enter':
-            e.preventDefault();
-            isAutoScrolling = false;
-            nextSlide();
-            setTimeout(() => { 
-              isAutoScrolling = true;
-              startAutoScroll();
-            }, 3000);
-            break;
-        }
-      });
+
       
       // Mouse wheel navigation
       container.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        
         if (isTransitioning) return;
-        
+        e.preventDefault();
         isAutoScrolling = false;
         
         if (e.deltaY > 0) {
-          // Scroll down - go to next
           nextSlide();
         } else {
-          // Scroll up - go to previous
           prevSlide();
         }
         
-        // Resume auto-scroll after 3 seconds
         setTimeout(() => {
           isAutoScrolling = true;
           startAutoScroll();
         }, 3000);
       });
       
-      // Pause auto-scroll on hover with focus for keyboard
+      // Pause auto-scroll on hover
       container.addEventListener('mouseenter', () => {
         isAutoScrolling = false;
-        container.setAttribute('tabindex', '0'); // Make focusable for keyboard navigation
-        container.focus();
       });
       
       container.addEventListener('mouseleave', () => {
-        if (!isDragging && !isTouchDragging) {
-          setTimeout(() => {
-            isAutoScrolling = true;
-            startAutoScroll();
-          }, 1000);
+        if (!isDragging) {
+          isAutoScrolling = true;
+          startAutoScroll();
         }
       });
       
-      // Responsive handling
-      window.addEventListener('resize', () => {
-        const newCardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
-        if (newCardsPerView !== cardsPerView) {
-          location.reload(); // Simple solution for responsive changes
-        }
-      });
+
       
       // Initialize
       setupInfiniteScroll();
@@ -2977,129 +2696,7 @@
     })();
   </script>
 
-  <!-- Categories Slider JavaScript -->
-  <script>
-    (function() {
-      const slider = document.getElementById('categories-slider');
-      const dots = document.querySelectorAll('[data-slide]');
-      let currentSlide = 0;
-      let isAutoPlaying = true;
-      let autoPlayInterval;
-      
-      if (!slider || !dots.length) return;
-      
-      const itemWidth = 288; // w-72 = 288px + gap
-      const itemsPerView = window.innerWidth >= 1024 ? 4 : (window.innerWidth >= 768 ? 3 : 2);
-      const maxSlide = Math.max(0, Math.ceil(slider.children.length / itemsPerView) - 1);
-      
-      function updateSlider() {
-        const translateX = currentSlide * (itemWidth * itemsPerView + 20); // 20px gap
-        slider.style.transform = `translateX(-${translateX}px)`;
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-          if (index === currentSlide) {
-            dot.classList.remove('bg-white/30');
-            dot.classList.add('bg-white/50');
-          } else {
-            dot.classList.remove('bg-white/50');
-            dot.classList.add('bg-white/30');
-          }
-        });
-      }
-      
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % (maxSlide + 1);
-        updateSlider();
-      }
-      
-      function goToSlide(slideIndex) {
-        currentSlide = Math.min(slideIndex, maxSlide);
-        updateSlider();
-      }
-      
-      function startAutoPlay() {
-        if (autoPlayInterval) clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(() => {
-          if (isAutoPlaying) {
-            nextSlide();
-          }
-        }, 4000);
-      }
-      
-      function stopAutoPlay() {
-        isAutoPlaying = false;
-        if (autoPlayInterval) {
-          clearInterval(autoPlayInterval);
-        }
-      }
-      
-      function resumeAutoPlay() {
-        isAutoPlaying = true;
-        startAutoPlay();
-      }
-      
-      // Dot navigation
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          stopAutoPlay();
-          goToSlide(index);
-          setTimeout(resumeAutoPlay, 3000);
-        });
-      });
-      
-      // Pause on hover
-      slider.addEventListener('mouseenter', stopAutoPlay);
-      slider.addEventListener('mouseleave', resumeAutoPlay);
-      
-      // Touch/swipe support
-      let startX = 0;
-      let isDragging = false;
-      
-      slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-        stopAutoPlay();
-      });
-      
-      slider.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-      });
-      
-      slider.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        
-        if (Math.abs(diff) > 50) {
-          if (diff > 0 && currentSlide < maxSlide) {
-            currentSlide++;
-          } else if (diff < 0 && currentSlide > 0) {
-            currentSlide--;
-          }
-          updateSlider();
-        }
-        
-        setTimeout(resumeAutoPlay, 3000);
-      });
-      
-      // Initialize
-      updateSlider();
-      startAutoPlay();
-      
-      // Responsive handling
-      window.addEventListener('resize', () => {
-        const newItemsPerView = window.innerWidth >= 1024 ? 4 : (window.innerWidth >= 768 ? 3 : 2);
-        if (newItemsPerView !== itemsPerView) {
-          location.reload(); // Simple solution for responsive changes
-        }
-      });
-      
-    })();
-  </script>
+
 
 </body>
 </html>
