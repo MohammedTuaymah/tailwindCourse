@@ -110,6 +110,48 @@
       outline-offset: 2px;
       border-radius: 12px;
     }
+
+    /* Sticky Scrolling Text Section */
+    .scrolling-text-container {
+      /* position: sticky; */
+      top: 0px; /* Below navbar */
+      z-index: 40;
+      overflow: hidden;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .scrolling-text {
+      display: inline-block;
+      animation: scroll-rtl 40s linear infinite;
+      padding-left: 0%;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes scroll-rtl {
+      0% {
+        transform: translate3d(0%, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    /* Pause animation on hover */
+    .scrolling-text-container:hover .scrolling-text {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="font-sans bg-white">
@@ -189,6 +231,7 @@
       </div>
     </div>
   </nav>
+
 
     <!-- Hero Section -->
   <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
@@ -337,6 +380,14 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Sticky Scrolling Text Section -->
+  <div class="scrolling-text-container py-3">
+    <div class="scrolling-text">
+      🎓 مرحباً بكم في منصة التعلم الرقمي • احصل على خصم 50% على جميع الدورات • تعلم البرمجة والتطوير مع أفضل المدربين • انضم الآن لأكثر من 10,000 طالب • شهادات معتمدة ومعترف بها دولياً • دعم فني على مدار الساعة • 🎓 مرحباً بكم في منصة التعلم الرقمي • احصل على خصم 50% على جميع الدورات • تعلم البرمجة والتطوير مع أفضل المدربين • انضم الآن لأكثر من 10,000 طالب • شهادات معتمدة ومعترف بها دولياً • دعم فني على مدار الساعة • 
+    </div>
+  </div>
 
   <!-- Our Top Pick Section -->
   <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
@@ -1544,6 +1595,8 @@
   <!-- Courses Carousel Section with Swiper -->
   <section class="py-12 md:py-16 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <!-- Debug: Check if section is visible -->
+      <div class="sr-only">Courses Carousel Section Loaded</div>
       <!-- Section Header -->
       <div class="text-center mb-8 md:mb-12">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">الكورسات الأكثر شعبية</h2>
@@ -1552,8 +1605,8 @@
       </div>
 
       <!-- Courses Swiper -->
-      <div class="courses-swiper relative">
-        <div class="swiper-wrapper">
+      <div class="courses-swiper relative" style="min-height: 400px;">
+        <div class="swiper-wrapper" style="display: flex;">
             
           <!-- Course Slide 1 -->
           <div class="swiper-slide">
@@ -1786,10 +1839,10 @@
         </div>
 
         <!-- Navigation arrows -->
-        <div class="courses-prev absolute top-1/2 right-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
+        <div class="courses-prev absolute top-1/2 right-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200 cursor-pointer">
           <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
         </div>
-        <div class="courses-next absolute top-1/2 left-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
+        <div class="courses-next absolute top-1/2 left-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200 cursor-pointer">
           <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
         </div>
 
@@ -3310,7 +3363,8 @@
     });
 
     // Courses Swiper
-    const coursesSwiper = new Swiper('.courses-swiper', {
+    try {
+      const coursesSwiper = new Swiper('.courses-swiper', {
       // Basic settings
       direction: 'horizontal',
       loop: true,
@@ -3324,15 +3378,15 @@
       // Responsive breakpoints
       breakpoints: {
         320: {
-          slidesPerView: 1.5,
-          spaceBetween: 20,
+          slidesPerView: 1.2,
+          spaceBetween: 16,
         },
         640: {
-          slidesPerView: 1.5,
+          slidesPerView: 1.8,
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 2.2,
           spaceBetween: 24,
         },
         1024: {
@@ -3341,7 +3395,7 @@
         },
         1280: {
           slidesPerView: 3.5,
-          spaceBetween: 24,
+          spaceBetween: 30,
         }
       },
       
@@ -3361,6 +3415,7 @@
       // Effects
       effect: 'slide',
       grabCursor: true,
+      centeredSlides: false,
       
       // RTL support
       rtl: true,
@@ -3368,6 +3423,7 @@
       // Events
       on: {
         init: function () {
+          console.log('Courses Swiper initialized successfully');
           // Course card click handlers
           document.querySelectorAll('.course-card').forEach(card => {
             card.addEventListener('click', () => {
@@ -3375,9 +3431,26 @@
               // Add your navigation logic here
             });
           });
+        },
+        slideChange: function () {
+          console.log('Slide changed to:', this.activeIndex);
         }
       }
     });
+    } catch (error) {
+      console.error('Error initializing Courses Swiper:', error);
+      // Fallback: Show all slides in a grid layout
+      const coursesContainer = document.querySelector('.courses-swiper');
+      if (coursesContainer) {
+        coursesContainer.style.overflow = 'visible';
+        const wrapper = coursesContainer.querySelector('.swiper-wrapper');
+        if (wrapper) {
+          wrapper.style.display = 'grid';
+          wrapper.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+          wrapper.style.gap = '24px';
+        }
+      }
+    }
 
     // Course Filtering System
     document.addEventListener('DOMContentLoaded', function() {
