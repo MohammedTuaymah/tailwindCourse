@@ -728,359 +728,451 @@
 
 
 
-  <!-- Products Section -->
+  <!-- Courses Grid Section with Filters -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">الكورسات المميزة</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">اكتشف أحدث الدورات التدريبية في مجال التقنية والذكاء الاصطناعي</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">جميع الكورسات</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">اكتشف مجموعة واسعة من الدورات التدريبية المتخصصة في مختلف المجالات التقنية</p>
       </div>
 
-      <!-- Products Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn active bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" data-filter="all">
+          جميع الكورسات
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="ai">
+          الذكاء الاصطناعي
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="web">
+          تطوير الويب
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="mobile">
+          تطوير الهاتف
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="data">
+          علم البيانات
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="devops">
+          DevOps
+        </button>
+        <button class="filter-btn bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-500 hover:text-blue-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" data-filter="design">
+          التصميم
+        </button>
+      </div>
+
+      <!-- Courses Grid -->
+      <div id="courses-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         
-        <!-- Product Card 1 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 1 - AI -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="ai">
           <div class="relative">
             <img src="./img/carts/1.jpg" 
                  alt="AI Automation Course"
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               جديد
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              الذكاء الاصطناعي: بناء  LLM ووكلاء AI
+              الذكاء الاصطناعي: بناء LLM ووكلاء AI
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              أتمتة كل شيء: n8n، LLMs، OpenAI API، Deepseek، Ollama وRAG! وكلاء الأعمال والخاص AI
-            </p>
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.7</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                أح
               </div>
-              <span>•</span>
-              <span>3,570 تقييم</span>
-              <span>•</span>
-              <span>13.5 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">أحمد محمد</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">88 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">جميع المستويات</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>3,570 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>13.5 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.7</span>
+              <span class="text-sm text-gray-500">(3,570)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$39.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 2 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 2 - Web -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="web">
           <div class="relative">
             <img src="./img/carts/2.jpg" 
                  alt="React Development Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               الأكثر مبيعاً
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              تطوير التطبيقات الحديثة  React
+              تطوير التطبيقات الحديثة React
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              تعلم React من الصفر حتى الاحتراف مع أحدث المكتبات والأدوات
-            </p>
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.8</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                سع
               </div>
-              <span>•</span>
-              <span>5,240 تقييم</span>
-              <span>•</span>
-              <span>18.5 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">سعد إبراهيم</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">124 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>5,240 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>18.5 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.8</span>
+              <span class="text-sm text-gray-500">(5,240)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$49.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 3 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 3 - Web -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="web">
           <div class="relative">
             <img src="./img/carts/3.jpg" 
                  alt="Python Programming Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               محدث
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
               البرمجة بـ Python للمبتدئين والمحترفين
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              دورة شاملة في Python مع تطبيقات عملية في علم البيانات والذكاء الاصطناعي
-            </p>
-            
-           
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.6</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                مح
               </div>
-              <span>•</span>
-              <span>2,890 تقييم</span>
-              <span>•</span>
-              <span>22.0 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">محمد علي</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">156 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">مبتدئ</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>2,890 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>22.0 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.6</span>
+              <span class="text-sm text-gray-500">(2,890)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$34.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 4 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 4 - Design -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="design">
           <div class="relative">
             <img src="./img/carts/4.jpg" 
                  alt="Web Design Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               مميز
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              تصميم المواقع الحديثة  Tailwind CSS
+              تصميم المواقع الحديثة Tailwind CSS
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              تعلم تصميم واجهات المستخدم العصرية والمتجاوبة باستخدام Tailwind CSS
-            </p>
-            
-           
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.9</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                فا
               </div>
-              <span>•</span>
-              <span>1,456 تقييم</span>
-              <span>•</span>
-              <span>16.5 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">فاطمة أحمد</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">98 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>1,456 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>16.5 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.9</span>
+              <span class="text-sm text-gray-500">(1,456)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$44.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 5 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 5 - Mobile -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="mobile">
           <div class="relative">
             <img src="./img/carts/5.jpg" 
                  alt="Mobile Development Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-indigo-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               متقدم
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              تطوير تطبيقات الهاتف  React Native
+              تطوير تطبيقات الهاتف React Native
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              بناء تطبيقات الهاتف المحمول لنظامي iOS وAndroid باستخدام React Native
-            </p>
-            
-           
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.5</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                عم
               </div>
-              <span>•</span>
-              <span>987 تقييم</span>
-              <span>•</span>
-              <span>20.5 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">عمر حسن</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">142 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متقدم</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>987 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>20.5 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.5</span>
+              <span class="text-sm text-gray-500">(987)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$59.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 6 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 6 - Data -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="data">
           <div class="relative">
             <img src="./img/carts/6.jpg" 
                  alt="Data Science Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-teal-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-teal-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               شائع
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              علم البيانات والتحليل  Python
+              علم البيانات والتحليل Python
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              تعلم تحليل البيانات والإحصائيات والتصور باستخدام Python وPandas
-            </p>
-            
-           
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.7</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                نو
               </div>
-              <span>•</span>
-              <span>4,123 تقييم</span>
-              <span>•</span>
-              <span>25.0 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">نور الدين</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">186 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>4,123 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>25.0 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.7</span>
+              <span class="text-sm text-gray-500">(4,123)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$54.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 7 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 7 - Web -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="web">
           <div class="relative">
             <img src="./img/carts/7.jpg" 
                  alt="Node.js Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
               عرض
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              تطوير الخلفية  Node.js وExpress
+              تطوير الخلفية Node.js وExpress
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              بناء تطبيقات الويب الخلفية باستخدام Node.js وExpress وMongoDB
-            </p>
-            
-           
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.6</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                خا
               </div>
-              <span>•</span>
-              <span>2,567 تقييم</span>
-              <span>•</span>
-              <span>19.5 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">خالد عبدالله</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">134 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متوسط</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>2,567 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>19.5 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.6</span>
+              <span class="text-sm text-gray-500">(2,567)</span>
             </div>
             
             <!-- Price and CTA -->
@@ -1089,61 +1181,68 @@
                 <div class="text-xl font-bold text-gray-900">$29.99</div>
                 <div class="text-sm text-gray-500 line-through">$79.99</div>
               </div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Product Card 8 -->
-        <div class="bg-white p-1.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+        <!-- Course Card 8 - DevOps -->
+        <div class="course-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100" data-category="devops">
           <div class="relative">
             <img src="./img/carts/8.jpg" 
                  alt="DevOps Course" 
-                 class="w-full h-48 object-cover object-center rounded-lg">
-            <div class="absolute top-2 right-2 bg-gray-700 text-white px-2 py-1 rounded text-xs font-semibold">
+                 class="w-full h-48 object-cover object-center">
+            <div class="absolute top-3 right-3 bg-gray-700 text-white px-3 py-1 rounded-full text-xs font-semibold">
               حصري
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div class="p-4">
+          <div class="p-5">
             <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 leading-tight">
-              DevOps والنشر المستمر  Docker
+              DevOps والنشر المستمر Docker
             </h3>
             
-            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
-              تعلم DevOps وأتمتة النشر باستخدام Docker وKubernetes وCI/CD
-            </p>
-            
-            <div class="text-sm text-gray-500 mb-3">
-              فادي سعد
-            </div>
-            
-            <!-- Rating and Stats -->
-            <div class="flex items-center gap-2 mb-3 text-xs text-gray-600">
-              <div class="flex items-center gap-1">
-                <span class="text-yellow-500 font-semibold">4.8</span>
-                <div class="flex text-yellow-400">
-                  ⭐⭐⭐⭐⭐
-                </div>
+            <!-- Instructor -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                فا
               </div>
-              <span>•</span>
-              <span>1,789 تقييم</span>
-              <span>•</span>
-              <span>28.0 ساعة</span>
+              <span class="text-sm text-gray-600 font-medium">فادي سعد</span>
             </div>
             
-            <div class="flex items-center gap-2 mb-4 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded">178 محاضرة</span>
-              <span class="bg-gray-100 px-2 py-1 rounded">متقدم</span>
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-sm text-gray-600 mb-3">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </svg>
+                <span>1,789 طالب</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>28.0 ساعة</span>
+              </div>
+            </div>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-yellow-400">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="text-sm font-semibold text-gray-700">4.8</span>
+              <span class="text-sm text-gray-500">(1,789)</span>
             </div>
             
             <!-- Price and CTA -->
             <div class="flex items-center justify-between">
               <div class="text-xl font-bold text-gray-900">$69.99</div>
-              <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                أضف للسلة
+              <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105">
+                اشترك الآن
               </button>
             </div>
           </div>
@@ -1151,9 +1250,9 @@
 
       </div>
 
-      <!-- View More Button -->
+      <!-- Load More Button -->
       <div class="text-center mt-12">
-        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+        <button id="load-more-btn" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
           عرض المزيد من الكورسات
         </button>
       </div>
@@ -2592,6 +2691,186 @@
           });
         }
       }
+    });
+
+    // Course Filtering System
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const courseCards = document.querySelectorAll('.course-card');
+      const coursesGrid = document.getElementById('courses-grid');
+
+      // Filter functionality
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+          
+          // Update active button
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white', 'shadow-lg');
+            btn.classList.add('bg-white', 'border-2', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+          });
+          
+          this.classList.add('active');
+          this.classList.remove('bg-white', 'border-2', 'border-gray-200', 'text-gray-700', 'hover:border-blue-500', 'hover:text-blue-600');
+          this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white', 'shadow-lg');
+          
+          // Filter courses with animation
+          courseCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'block';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              
+              setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 100);
+            } else {
+              card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(-20px)';
+              
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+          
+          // Update grid layout after filtering
+          setTimeout(() => {
+            const visibleCards = Array.from(courseCards).filter(card => 
+              filter === 'all' || card.dataset.category === filter
+            );
+            
+            // Add stagger animation to visible cards
+            visibleCards.forEach((card, index) => {
+              setTimeout(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, index * 100);
+            });
+          }, 100);
+        });
+      });
+
+      // Search functionality (optional enhancement)
+      function createSearchBox() {
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'flex justify-center mb-8';
+        searchContainer.innerHTML = `
+          <div class="relative max-w-md w-full">
+            <input 
+              type="text" 
+              id="course-search" 
+              placeholder="ابحث عن كورس..." 
+              class="w-full px-4 py-3 pr-12 rounded-full border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-all duration-300"
+            >
+            <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        `;
+        
+        // Insert search box before filter buttons
+        const filterContainer = document.querySelector('.flex.flex-wrap.justify-center.gap-3.mb-12');
+        filterContainer.parentNode.insertBefore(searchContainer, filterContainer);
+        
+        // Add search functionality
+        const searchInput = document.getElementById('course-search');
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase().trim();
+          
+          courseCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const instructor = card.querySelector('.text-gray-600.font-medium').textContent.toLowerCase();
+            
+            if (searchTerm === '' || title.includes(searchTerm) || instructor.includes(searchTerm)) {
+              card.style.display = 'block';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(-10px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      }
+      
+      // Uncomment the line below to enable search functionality
+      // createSearchBox();
+
+      // Load more functionality (simulate loading more courses)
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      let loadedCourses = 8; // Initial number of courses
+      
+      loadMoreBtn?.addEventListener('click', function() {
+        // Simulate loading animation
+        this.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          جاري التحميل...
+        `;
+        
+        // Simulate API call delay
+        setTimeout(() => {
+          this.innerHTML = 'عرض المزيد من الكورسات';
+          
+          // You can add logic here to actually load more courses
+          // For now, we'll just show a message
+          console.log('Loading more courses...');
+          
+          // Example: You could fetch more courses from an API and append them to the grid
+          // fetchMoreCourses().then(courses => {
+          //   appendCoursesToGrid(courses);
+          // });
+          
+        }, 1500);
+      });
+
+      // Smooth scroll to courses section when filter is changed
+      // filterButtons.forEach(button => {
+      //   button.addEventListener('click', function() {
+      //     setTimeout(() => {
+      //       coursesGrid.scrollIntoView({ 
+      //         behavior: 'smooth', 
+      //         block: 'start' 
+      //       });
+      //     }, 200);
+      //   });
+      // });
+
+      // Add hover effects to course cards
+      courseCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px)';
+          this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.05)';
+        });
+      });
+
+      // Initialize with animation on page load
+      courseCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 150);
+      });
     });
   </script>
 
