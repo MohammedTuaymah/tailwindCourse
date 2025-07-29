@@ -152,6 +152,105 @@
     .scrolling-text-container:hover .scrolling-text {
       animation-play-state: paused;
     }
+
+    /* Countdown Banner Styles */
+    .countdown-banner {
+      background: linear-gradient(135deg, #ff9ff3, #54a0ff);
+      background-size: 400% 400%;
+      /* animation: gradientWave 4s ease infinite; */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    } */
+
+    .countdown-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      /* background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); */
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .countdown-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      /* transition: all 0.3s ease; */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-box:hover {
+      /* transform: scale(1.05); */
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .offer-badge {
+      background: linear-gradient(45deg, #ff6b6b, #feca57);
+      animation: bounce 2s infinite;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    /* @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    } */
+
+    .fire-icon {
+      animation: fireFlicker 0.5s infinite alternate;
+    }
+
+    /* @keyframes fireFlicker {
+      0% { transform: scale(1) rotate(-2deg); }
+      100% { transform: scale(1.1) rotate(2deg); }
+    } */
+
+    .urgent-text {
+      animation: urgentBlink 1.5s infinite;
+    }
+
+    @keyframes urgentBlink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.7; }
+    }
   </style>
 </head>
 <body class="font-sans bg-white">
@@ -282,6 +381,354 @@
         <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
+      </div>
+    </div>
+  </section>
+
+
+
+
+      <!-- Store Categories Section with Swiper -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">تصفح حسب الفئة</h2>
+          <div class="w-24 h-1 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
+          <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">اكتشف الكورسات المناسبة لك من خلال تصفح الفئات المختلفة</p>
+        </div>
+  
+        <!-- Categories Swiper -->
+        <div class="categories-swiper relative">
+          <div class="swiper-wrapper">
+            
+            <!-- Category Slide 1: Programming -->
+            <div class="swiper-slide h-auto">
+              <div class="category-card h-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group flex flex-col" data-category="programming">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/3.jpg" alt="البرمجة" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                                </div>
+                  <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">البرمجة</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">تعلم لغات البرمجة المختلفة من المبتدئ إلى المتقدم</p>
+                    <div class="flex items-center justify-between mt-auto">
+                      <span class="text-sm text-gray-500">156 كورس</span>
+                      <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                        <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 2: Web Development -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="web-development">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/2.jpg" alt="تطوير الويب" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">تطوير الويب</h3>
+                  <p class="text-gray-600 text-sm mb-4">بناء مواقع وتطبيقات الويب الحديثة والمتجاوبة</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">203 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 3: AI & Machine Learning -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="ai-ml">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/1.jpg" alt="الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-200">الذكاء الاصطناعي</h3>
+                  <p class="text-gray-600 text-sm mb-4">تعلم الذكاء الاصطناعي وتعلم الآلة وأحدث التقنيات</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">89 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 4: Mobile Development -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="mobile-development">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/5.jpg" alt="تطوير الهاتف" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-200">تطوير الهاتف</h3>
+                  <p class="text-gray-600 text-sm mb-4">بناء تطبيقات الهاتف المحمول لنظامي iOS وAndroid</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">134 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 5: Data Science -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="data-science">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/6.jpg" alt="علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-200">علم البيانات</h3>
+                  <p class="text-gray-600 text-sm mb-4">تحليل البيانات والإحصائيات والتصور البياني</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">167 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 6: DevOps -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="devops">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/8.jpg" alt="DevOps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-200">DevOps</h3>
+                  <p class="text-gray-600 text-sm mb-4">أتمتة النشر والتطوير المستمر وإدارة البنية التحتية</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">78 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 7: Design -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="design">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/4.jpg" alt="التصميم" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-200">التصميم</h3>
+                  <p class="text-gray-600 text-sm mb-4">تصميم واجهات المستخدم والرسومات والمواقع</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">145 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Category Slide 8: Backend Development -->
+            <div class="swiper-slide">
+              <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="backend">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="./img/carts/7.jpg" alt="تطوير الخلفية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-4 right-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-200">تطوير الخلفية</h3>
+                  <p class="text-gray-600 text-sm mb-4">بناء APIs وقواعد البيانات والخوادم</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">112 كورس</span>
+                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
+                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <!-- Navigation arrows -->
+          <div class="categories-prev absolute top-1/2 right-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
+            <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
+          </div>
+          <div class="categories-next absolute top-1/2 left-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
+            <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
+          </div>
+  
+          <!-- Pagination dots -->
+          <div class="swiper-pagination categories-pagination mt-8"></div>
+        </div>
+        
+        <!-- View All Categories Button -->
+        <div class="mt-16 text-center">
+          <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-200 hover:border-purple-300 text-base font-bold rounded-lg text-purple-700 hover:text-purple-800 bg-white hover:bg-purple-50 transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow">
+            عرض جميع الفئات
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform translate-x-0.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+
+  <!-- Interactive Countdown Banner -->
+  <section class="countdown-banner py-8 relative z-30 m-2 rounded-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <!-- Offer Content -->
+        <div class="text-center lg:text-right flex-1">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-4">
+            <div class="offer-badge text-white px-4 py-2 rounded-full font-bold text-sm">
+              عرض محدود
+            </div>
+            <div class="fire-icon text-2xl">🔥</div>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+            خصم <span class="text-yellow-300">70%</span> على جميع الكورسات
+          </h2>
+          
+          <p class="text-lg text-white/90 mb-4 drop-shadow-md">
+            فرصة ذهبية لتعلم البرمجة والتطوير بأقل الأسعار
+          </p>
+          
+          <div class="urgent-text text-red-200 font-semibold mb-6">
+            ⚠️ العرض ينتهي قريباً - لا تفوت الفرصة!
+          </div>
+          
+          <button class="bg-white text-gray-900 cursor-pointer px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-yellow-100">
+            احصل على الخصم الآن
+            <span class="mr-2">⚡</span>
+          </button>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="flex-shrink-0">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-bold text-white mb-2 drop-shadow-lg">
+              ينتهي العرض خلال:
+            </h3>
+          </div>
+          
+          <div class="grid grid-cols-4 gap-4" id="countdownTimer">
+            <!-- Days -->
+            <div class="countdown-box">
+              <div class="countdown-number" id="days">00</div>
+              <div class="countdown-label">أيام</div>
+            </div>
+            
+            <!-- Hours -->
+            <div class="countdown-box">
+              <div class="countdown-number" id="hours">00</div>
+              <div class="countdown-label">ساعات</div>
+            </div>
+            
+            <!-- Minutes -->
+            <div class="countdown-box">
+              <div class="countdown-number" id="minutes">00</div>
+              <div class="countdown-label">دقائق</div>
+            </div>
+            
+            <!-- Seconds -->
+            <div class="countdown-box">
+              <div class="countdown-number" id="seconds">00</div>
+              <div class="countdown-label">ثواني</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1870,278 +2317,6 @@
 
 
   
-      <!-- Store Categories Section with Swiper -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <!-- Section Header -->
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">تصفح حسب الفئة</h2>
-        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
-        <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">اكتشف الكورسات المناسبة لك من خلال تصفح الفئات المختلفة</p>
-      </div>
-
-      <!-- Categories Swiper -->
-      <div class="categories-swiper relative">
-        <div class="swiper-wrapper">
-          
-          <!-- Category Slide 1: Programming -->
-          <div class="swiper-slide h-auto">
-            <div class="category-card h-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group flex flex-col" data-category="programming">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/3.jpg" alt="البرمجة" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                    </svg>
-                  </div>
-                </div>
-                              </div>
-                <div class="p-6 flex flex-col flex-grow">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">البرمجة</h3>
-                  <p class="text-gray-600 text-sm mb-4 flex-grow">تعلم لغات البرمجة المختلفة من المبتدئ إلى المتقدم</p>
-                  <div class="flex items-center justify-between mt-auto">
-                    <span class="text-sm text-gray-500">156 كورس</span>
-                    <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                      <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 2: Web Development -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="web-development">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/2.jpg" alt="تطوير الويب" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">تطوير الويب</h3>
-                <p class="text-gray-600 text-sm mb-4">بناء مواقع وتطبيقات الويب الحديثة والمتجاوبة</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">203 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 3: AI & Machine Learning -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="ai-ml">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/1.jpg" alt="الذكاء الاصطناعي" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-200">الذكاء الاصطناعي</h3>
-                <p class="text-gray-600 text-sm mb-4">تعلم الذكاء الاصطناعي وتعلم الآلة وأحدث التقنيات</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">89 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 4: Mobile Development -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="mobile-development">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/5.jpg" alt="تطوير الهاتف" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-200">تطوير الهاتف</h3>
-                <p class="text-gray-600 text-sm mb-4">بناء تطبيقات الهاتف المحمول لنظامي iOS وAndroid</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">134 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 5: Data Science -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="data-science">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/6.jpg" alt="علم البيانات" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-200">علم البيانات</h3>
-                <p class="text-gray-600 text-sm mb-4">تحليل البيانات والإحصائيات والتصور البياني</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">167 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 6: DevOps -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="devops">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/8.jpg" alt="DevOps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-200">DevOps</h3>
-                <p class="text-gray-600 text-sm mb-4">أتمتة النشر والتطوير المستمر وإدارة البنية التحتية</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">78 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 7: Design -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="design">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/4.jpg" alt="التصميم" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-200">التصميم</h3>
-                <p class="text-gray-600 text-sm mb-4">تصميم واجهات المستخدم والرسومات والمواقع</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">145 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Slide 8: Backend Development -->
-          <div class="swiper-slide">
-            <div class="category-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100 overflow-hidden group" data-category="backend">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./img/carts/7.jpg" alt="تطوير الخلفية" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-4 right-4">
-                  <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-200">تطوير الخلفية</h3>
-                <p class="text-gray-600 text-sm mb-4">بناء APIs وقواعد البيانات والخوادم</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-sm text-gray-500">112 كورس</span>
-                  <div class="flex items-center text-yellow-600 group-hover:translate-x-1 transition-transform duration-200">
-                    <svg class="w-6 h-6 p-1 rounded-full bg-[#9810fa] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Navigation arrows -->
-        <div class="categories-prev absolute top-1/2 right-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
-          <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
-        </div>
-        <div class="categories-next absolute top-1/2 left-4 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-gray-50 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 border border-gray-200">
-          <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
-        </div>
-
-        <!-- Pagination dots -->
-        <div class="swiper-pagination categories-pagination mt-8"></div>
-      </div>
-      
-      <!-- View All Categories Button -->
-      <div class="mt-16 text-center">
-        <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-200 hover:border-purple-300 text-base font-bold rounded-lg text-purple-700 hover:text-purple-800 bg-white hover:bg-purple-50 transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow">
-          عرض جميع الفئات
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform translate-x-0.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Career Skills Section -->
   <section id="career-skills" class="relative py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 m-2 rounded-2xl">
@@ -3630,6 +3805,97 @@
           card.style.transform = 'translateY(0)';
         }, index * 150);
       });
+    });
+
+    // Countdown Timer Script
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set countdown end date (3 days from now)
+      const countdownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+      
+      // Get DOM elements
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      
+      // Update countdown every second
+      const countdownTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+        
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Format with leading zeros
+        const formatTime = (time) => time.toString().padStart(2, '0');
+        
+        // Update display
+        if (daysEl) daysEl.textContent = formatTime(days);
+        if (hoursEl) hoursEl.textContent = formatTime(hours);
+        if (minutesEl) minutesEl.textContent = formatTime(minutes);
+        if (secondsEl) secondsEl.textContent = formatTime(seconds);
+        
+        // Add urgency effects when time is running low
+        if (hours < 1) {
+          // Less than 1 hour - make it red and more urgent
+          [daysEl, hoursEl, minutesEl, secondsEl].forEach(el => {
+            if (el) {
+              el.style.color = '#ff4757';
+              el.style.animation = 'pulse 0.5s infinite';
+            }
+          });
+        } else if (hours < 6) {
+          // Less than 6 hours - make it orange
+          [daysEl, hoursEl, minutesEl, secondsEl].forEach(el => {
+            if (el) {
+              el.style.color = '#ffa502';
+            }
+          });
+        }
+        
+        // When countdown ends
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          [daysEl, hoursEl, minutesEl, secondsEl].forEach(el => {
+            if (el) el.textContent = '00';
+          });
+          
+          // Optional: Show expired message or restart countdown
+          setTimeout(() => {
+            // Restart countdown for next offer (7 days)
+            location.reload();
+          }, 5000);
+        }
+      }, 1000);
+      
+      // Add click effects to countdown boxes
+      const countdownBoxes = document.querySelectorAll('.countdown-box');
+      countdownBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+              this.style.transform = 'scale(1)';
+            }, 150);
+          }, 100);
+        });
+      });
+      
+      // Add particle effect on banner hover
+      // const banner = document.querySelector('.countdown-banner');
+      // if (banner) {
+      //   banner.addEventListener('mouseenter', function() {
+      //     this.style.transform = 'scale(1.02)';
+      //   });
+        
+      //   banner.addEventListener('mouseleave', function() {
+      //     this.style.transform = 'scale(1)';
+      //   });
+      // }
     });
   </script>
 
