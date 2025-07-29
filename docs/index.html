@@ -135,10 +135,20 @@
           </div>
         </div>
 
-        <!-- CTA Button -->
-        <div class="hidden md:block">
-          <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
-            ابدأ الآن
+        <!-- CTA Button with Icons -->
+        <div class="hidden md:flex items-center gap-3">
+          <!-- User Icon Button -->
+          <button class="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+            <i class="fas fa-user text-sm"></i>
+            <span>حسابي</span>
+          </button>
+          
+          <!-- Cart Icon Button -->
+          <button class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-green-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg relative">
+            <i class="fas fa-shopping-cart text-sm"></i>
+            <span>السلة</span>
+            <!-- Cart Badge -->
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">3</span>
           </button>
         </div>
 
@@ -161,9 +171,19 @@
         <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">الخدمات</a>
         <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">المشاريع</a>
         <a href="#" class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">تواصل معنا</a>
-        <div class="pt-2">
-          <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium">
-            ابدأ الآن
+        <div class="pt-2 space-y-2">
+          <!-- User Icon Button -->
+          <button class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+            <i class="fas fa-user text-sm"></i>
+            <span>حسابي</span>
+          </button>
+          
+          <!-- Cart Icon Button -->
+          <button class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-green-700 hover:to-blue-700 transition-all duration-200 relative">
+            <i class="fas fa-shopping-cart text-sm"></i>
+            <span>السلة</span>
+            <!-- Cart Badge -->
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">3</span>
           </button>
         </div>
       </div>
